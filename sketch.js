@@ -30,28 +30,22 @@ function degreesToRadians(thetaInDegrees) {
 //the archimedes spiral formula is r = a * theta, where a is a number of our choice
 // we can choose a to be any number, so let's choose something that looks good!
 function radiusForSpiral(theta) {
-  // a is defined from the windowWidth, to make it equivalent for any screen
+  // a is a ratio that has been found empirically
   return (50 / 2880 * windowWidth) * theta;
 }
 
 function setup() {
 
-  //log window with to make calculations
-  // in my case:
-  //    windowWidth is 2880
-  //  The pixels that look good at my width are 50
-  //  So, in general, I will want 50 / 2880 * windowWidth
-  console.log(windowWidth);
-  console.log(windowHeight);
-
   // create a canvas of size windowWidth x windowHeight
   // windowWidth and windowHeight are variables given to us by by p5.js
   createCanvas(windowWidth, windowHeight);
 
+  noStroke();
+}
+
+function draw() {
   // set up background to greyscale 220
   background(220);
-
-  noStroke();
 
   //set stroke
   const stroke = 10;
