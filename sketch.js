@@ -35,46 +35,40 @@ function setup() {
   // set up background to greyscale 220
   background(220);
 
+  noStroke();
+
+  //radius of circumference
+  const radius = 500;
+  const stroke = 10;
+
+  //drawing a circle using radians and degrees
+  for (let theta = 0; theta < 360; theta = theta + 0.1) {
+    //change theta to pi style
+    const piTheta = degreesToRadians(theta);
+    console.log(piTheta);
+
+    //get html coordinates for this degree
+    const htmlCoordinates = polarToHtml(radius, piTheta);
+    console.log(htmlCoordinates);
+
+    //draw circle
+    circle(htmlCoordinates.x, htmlCoordinates.y, stroke);
+  }
+
+  //drawing a circle without using radians and degrees
+  /*
+
   // centre stores the centre in an object
   // centre.x gives the horizontal coordinate of the centre
   // centre.y gives the vertical coordinate of the centre
   const centre = { x: windowWidth / 2, y: windowHeight / 2 };
 
-  //remove stroke
-  noStroke();
 
-  // to draw a point in the centre
-  let radius = 0;
-  let theta = 0;
-  let htmlCoordinates = polarToHtml(radius, theta);
-  fill(color(0, 200, 200));
-  circle(htmlCoordinates.x, htmlCoordinates.y, 50);
+  noFill();
 
-  //to draw a point towards the rigth
-  radius = 500;
-  theta = degreesToRadians(0);
-  htmlCoordinates = polarToHtml(radius, theta);
-  fill(color(0, 200, 0));
-  circle(htmlCoordinates.x, htmlCoordinates.y, 50);
+  stroke(color('blue'));
+  strokeWeight(20)
 
-  //to draw a point towards the top
-  radius = 500;
-  theta = degreesToRadians(90);
-  htmlCoordinates = polarToHtml(radius, theta);
-  fill(color(200, 200, 0));
-  circle(htmlCoordinates.x, htmlCoordinates.y, 50);
-
-  //to draw a point towards the left
-  radius = 500;
-  theta = degreesToRadians(180);
-  htmlCoordinates = polarToHtml(radius, theta);
-  fill(color(200, 0, 200));
-  circle(htmlCoordinates.x, htmlCoordinates.y, 50);
-
-  //to draw a point towards the bottom
-  radius = 500;
-  theta = degreesToRadians(270);
-  htmlCoordinates = polarToHtml(radius, theta);
-  fill(color(0, 0, 200));
-  circle(htmlCoordinates.x, htmlCoordinates.y, 50);
+  circle(centre.x, centre.y, 500)
+  */
 }
