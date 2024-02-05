@@ -23,6 +23,10 @@ function polarToHtml(radius, theta) {
   return htmlCoordinates;
 }
 
+function degreesToRadians(thetaInDegrees) {
+  return (thetaInDegrees * PI) / 180;
+}
+
 function setup() {
   // create a canvas of size windowWidth x windowHeight
   // windowWidth and windowHeight are variables given to us by by p5.js
@@ -48,28 +52,28 @@ function setup() {
 
   //to draw a point towards the rigth
   radius = 500;
-  theta = 0;
+  theta = degreesToRadians(0);
   htmlCoordinates = polarToHtml(radius, theta);
   fill(color(0, 200, 0));
   circle(htmlCoordinates.x, htmlCoordinates.y, 50);
 
   //to draw a point towards the top
   radius = 500;
-  theta = PI / 2;
+  theta = degreesToRadians(90);
   htmlCoordinates = polarToHtml(radius, theta);
   fill(color(200, 200, 0));
   circle(htmlCoordinates.x, htmlCoordinates.y, 50);
 
   //to draw a point towards the left
   radius = 500;
-  theta = PI;
+  theta = degreesToRadians(180);
   htmlCoordinates = polarToHtml(radius, theta);
   fill(color(200, 0, 200));
   circle(htmlCoordinates.x, htmlCoordinates.y, 50);
 
   //to draw a point towards the bottom
   radius = 500;
-  theta = (3 * PI) / 2;
+  theta = degreesToRadians(270);
   htmlCoordinates = polarToHtml(radius, theta);
   fill(color(0, 0, 200));
   circle(htmlCoordinates.x, htmlCoordinates.y, 50);
