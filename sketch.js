@@ -43,15 +43,17 @@ function setup() {
   noStroke();
 }
 
+let offset = 0;
+
 function draw() {
   // set up background to greyscale 220
   background(220);
 
   //set stroke
-  const stroke = 10;
+  const stroke = 20;
 
   //drawing a circle using radians and degrees
-  for (let theta = 0; theta < 3 * 360; theta = theta + 0.1) {
+  for (let theta = 0; theta < 7 * 360; theta = theta + 0.1) {
     //change theta to pi style
     const piTheta = degreesToRadians(theta);
 
@@ -59,9 +61,11 @@ function draw() {
     const radius = radiusForSpiral(piTheta);
 
     //get html coordinates for this degree
-    const htmlCoordinates = polarToHtml(radius, piTheta);
+    const htmlCoordinates = polarToHtml(radius, piTheta + offset);
 
     //draw circle
     circle(htmlCoordinates.x, htmlCoordinates.y, stroke);
   }
+  
+  offset = offset + 0.01;
 }
