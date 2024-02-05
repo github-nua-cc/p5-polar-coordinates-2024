@@ -30,10 +30,20 @@ function degreesToRadians(thetaInDegrees) {
 //the archimedes spiral formula is r = a * theta, where a is a number of our choice
 // we can choose a to be any number, so let's choose something that looks good!
 function radiusForSpiral(theta) {
-  return 50 * theta;
+  // a is defined from the windowWidth, to make it equivalent for any screen
+  return (50 / 2880 * windowWidth) * theta;
 }
 
 function setup() {
+
+  //log window with to make calculations
+  // in my case:
+  //    windowWidth is 2880
+  //  The pixels that look good at my width are 50
+  //  So, in general, I will want 50 / 2880 * windowWidth
+  console.log(windowWidth);
+  console.log(windowHeight);
+
   // create a canvas of size windowWidth x windowHeight
   // windowWidth and windowHeight are variables given to us by by p5.js
   createCanvas(windowWidth, windowHeight);
@@ -50,33 +60,14 @@ function setup() {
   for (let theta = 0; theta < 3 * 360; theta = theta + 0.1) {
     //change theta to pi style
     const piTheta = degreesToRadians(theta);
-    console.log(piTheta);
 
     //get radius
     const radius = radiusForSpiral(piTheta);
 
     //get html coordinates for this degree
     const htmlCoordinates = polarToHtml(radius, piTheta);
-    console.log(htmlCoordinates);
 
     //draw circle
     circle(htmlCoordinates.x, htmlCoordinates.y, stroke);
   }
-
-  //drawing a circle without using radians and degrees
-  /*
-
-  // centre stores the centre in an object
-  // centre.x gives the horizontal coordinate of the centre
-  // centre.y gives the vertical coordinate of the centre
-  const centre = { x: windowWidth / 2, y: windowHeight / 2 };
-
-
-  noFill();
-
-  stroke(color('blue'));
-  strokeWeight(20)
-
-  circle(centre.x, centre.y, 500)
-  */
 }
