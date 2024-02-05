@@ -27,6 +27,12 @@ function degreesToRadians(thetaInDegrees) {
   return (thetaInDegrees * PI) / 180;
 }
 
+//the archimedes spiral formula is r = a * theta, where a is a number of our choice
+// we can choose a to be any number, so let's choose something that looks good!
+function radiusForSpiral(theta) {
+  return 50 * theta;
+}
+
 function setup() {
   // create a canvas of size windowWidth x windowHeight
   // windowWidth and windowHeight are variables given to us by by p5.js
@@ -37,15 +43,17 @@ function setup() {
 
   noStroke();
 
-  //radius of circumference
-  const radius = 500;
+  //set stroke
   const stroke = 10;
 
   //drawing a circle using radians and degrees
-  for (let theta = 0; theta < 360; theta = theta + 0.1) {
+  for (let theta = 0; theta < 3 * 360; theta = theta + 0.1) {
     //change theta to pi style
     const piTheta = degreesToRadians(theta);
     console.log(piTheta);
+
+    //get radius
+    const radius = radiusForSpiral(piTheta);
 
     //get html coordinates for this degree
     const htmlCoordinates = polarToHtml(radius, piTheta);
