@@ -17,6 +17,12 @@ function cartesianToHtml(cartesian) {
   return { x: centre.x + cartesian.x, y: centre.y + cartesian.y };
 }
 
+function polarToHtml(radius, theta) {
+  const cartesianCoordinates = polarToCartesian(radius, theta);
+  const htmlCoordinates = cartesianToHtml(cartesianCoordinates);
+  return htmlCoordinates;
+}
+
 function setup() {
   // create a canvas of size windowWidth x windowHeight
   // windowWidth and windowHeight are variables given to us by by p5.js
@@ -36,8 +42,35 @@ function setup() {
   // to draw a point in the centre
   let radius = 0;
   let theta = 0;
-  let cartesianCoordinates = polarToCartesian(radius, theta);
-  let htmlCoordinates = cartesianToHtml(cartesianCoordinates);
+  let htmlCoordinates = polarToHtml(radius, theta);
   fill(color(0, 200, 200));
+  circle(htmlCoordinates.x, htmlCoordinates.y, 50);
+
+  //to draw a point towards the rigth
+  radius = 500;
+  theta = 0;
+  htmlCoordinates = polarToHtml(radius, theta);
+  fill(color(0, 200, 0));
+  circle(htmlCoordinates.x, htmlCoordinates.y, 50);
+
+  //to draw a point towards the top
+  radius = 500;
+  theta = PI / 2;
+  htmlCoordinates = polarToHtml(radius, theta);
+  fill(color(200, 200, 0));
+  circle(htmlCoordinates.x, htmlCoordinates.y, 50);
+
+  //to draw a point towards the left
+  radius = 500;
+  theta = PI;
+  htmlCoordinates = polarToHtml(radius, theta);
+  fill(color(200, 0, 200));
+  circle(htmlCoordinates.x, htmlCoordinates.y, 50);
+
+  //to draw a point towards the bottom
+  radius = 500;
+  theta = (3 * PI) / 2;
+  htmlCoordinates = polarToHtml(radius, theta);
+  fill(color(0, 0, 200));
   circle(htmlCoordinates.x, htmlCoordinates.y, 50);
 }
