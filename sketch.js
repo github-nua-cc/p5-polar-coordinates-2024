@@ -10,13 +10,10 @@ function radiusForSpiral(theta) {
 
 function setup() {
   noStroke();
-
-  setupSpiral();
 }
 
 function draw() {
-
   setUpCanvas();
 
-  drawSpirals();  
+  drawSpirals();
 }
