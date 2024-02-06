@@ -31,6 +31,11 @@ function drawACircleWithIndex(radius, piTheta, colorIndex) {
   circle(htmlCoordinates.x, htmlCoordinates.y, stroke);
 }
 
+/**
+ * Draw all the points for main spiral and inner spirals for this radius and theta
+ * @param {Number} radius
+ * @param {Number} piTheta
+ */
 function drawPointsAtThisRadiusTheta(radius, piTheta) {
   //nextRadius is the radius at which we are drawing the next point which will be update throuhgouth the while
   let nextRadius = radius;
@@ -50,6 +55,11 @@ function drawPointsAtThisRadiusTheta(radius, piTheta) {
 
 //the archimedes spiral formula is r = a * theta, where a is a number of our choice
 // we can choose a to be any number, so let's choose something that looks good!
+/**
+ * Get r for the given theta
+ * @param {Number} theta
+ * @returns
+ */
 function radiusForSpiral(theta) {
   // a is a ratio that has been found empirically
   return (50 / 2880) * windowWidth * theta;
