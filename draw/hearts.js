@@ -1,8 +1,7 @@
 const heartScale = 100;
 const heartStroke = 8;
 
-//the formula for a heart is radius = sin(theta) * Math.sqrt(Math.abs(cos(theta))) / (sin(theta) + 7 / 5) * 2 * sin(theta) + 2;
-// we have also found an empirical scale to scale it up
+
 /**
  * Get r for the given theta
  * @param {Number} theta
