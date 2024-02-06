@@ -24,15 +24,9 @@ function setup() {
 let offset = 0;
 
 function draw() {
-  // create a canvas depending on the window size
-  // windowWidth and windowHeight are variables given to us by by p5.js
-  //get lower width or height as reference
-  canvasSize = getCanvasSize(windowWidth, windowHeight);
-  createCanvas(canvasSize, canvasSize);
 
-  // set up background to greyscale 220
-  background(220);
-
+  setUpCanvas();
+  
   //set stroke
   let stroke = 20;
 

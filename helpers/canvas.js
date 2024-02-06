@@ -4,10 +4,21 @@
  */
 function getCanvasSize() {
   if (windowWidth > windowHeight) {
-    return windowHeight / 2;
+    return (2 * windowHeight) / 3;
   }
   if (windowHeight > windowWidth) {
-    return windowHeight / 2;
+    return (2 * windowHeight) / 3;
   }
 }
 
+/**
+ * set up the canvas as we want it
+ */
+function setUpCanvas() {
+  // get canvas size from helpers
+  canvasSize = getCanvasSize(windowWidth, windowHeight);
+  createCanvas(canvasSize, canvasSize);
+
+  // set up background to greyscale 220
+  background(220);
+}
