@@ -24,6 +24,9 @@ function setUpCanvas() {
 
   // set up background to greyscale 220
   background(220);
+
+  //setup for heart
+  heartSetup();
 }
 
 /**

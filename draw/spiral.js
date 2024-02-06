@@ -1,5 +1,5 @@
 let offset = 0;
-const stroke = 20;
+const spiralStroke = 20;
 let colors = [];
 
 /**
@@ -28,7 +28,7 @@ function drawACircleWithIndex(radius, piTheta, colorIndex) {
 
   //fill and paint
   fill(colors[colorIndex]);
-  circle(htmlCoordinates.x, htmlCoordinates.y, stroke);
+  circle(htmlCoordinates.x, htmlCoordinates.y, spiralStroke);
 }
 
 /**
@@ -42,13 +42,13 @@ function drawPointsAtThisRadiusTheta(radius, piTheta) {
   //colorIndex is the index color of this spiral, as set in the setup, which will also be update throughout the while
   let colorIndex = 0;
 
-  while (nextRadius > stroke / 2) {
+  while (nextRadius > spiralStroke / 2) {
     if (shouldDrawHere(nextRadius, piTheta, colorIndex))
       //draw circle
       drawACircleWithIndex(nextRadius, piTheta, colorIndex);
 
     //update radius
-    nextRadius = nextRadius - stroke / 2;
+    nextRadius = nextRadius - spiralStroke / 2;
     colorIndex++;
   }
 }
