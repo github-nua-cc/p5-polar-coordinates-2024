@@ -22,12 +22,9 @@ function drawInnerCircles(radius, piTheta) {
   // let circleIndex = circleIndexOffset;
 
   while (nextRadius > 0) {
-    //choose color
-    const newR = random(255);
-    const newG = random(255);
-    const newB = random(255);
-    const newColor = color(newR, newG, newB);
+    //choose color if needed
     if (circleColors.length >= circleIndex) {
+      const newColor = generateRandomColor();
       circleColors.push(newColor);
     }
 
@@ -45,13 +42,10 @@ function drawInnerCircles(radius, piTheta) {
     circleIndex++;
   }
 
-  if(nextRadius < 0) {
+  if (nextRadius < 0) {
     //choose color if needed
     if (circleColors.length >= circleIndex) {
-    const newR = random(255);
-    const newG = random(255);
-    const newB = random(255);
-    const newColor = color(newR, newG, newB);
+      const newColor = generateRandomColor();
       circleColors.push(newColor);
     }
 

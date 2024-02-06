@@ -15,12 +15,7 @@ function drawACircleWithIndex(radius, piTheta, colorIndex) {
   //if color for this index is not set, set it for the first time
   if (colorIndex >= colors.length) {
     //create new color as a random color
-    const newColor = color(
-      random(255),
-      random(255),
-      random(255),
-      255 - colorIndex * 5
-    );
+    const newColor = generateRandomColor(255 - colorIndex * 5);
 
     //save color in index
     colors.push(newColor);
