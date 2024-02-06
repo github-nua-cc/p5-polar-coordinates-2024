@@ -11,14 +11,7 @@ function radiusForSpiral(theta) {
 function setup() {
   noStroke();
 
-  //colors
-  colors = [];
-
-  //populate colors
-  for (let i = 0; i < 255; i = i + 5) {
-    let newColor = color(random(255), random(255), random(255), 255 - i);
-    colors.push(newColor);
-  }
+  setupSpiral();
 }
 
 function draw() {

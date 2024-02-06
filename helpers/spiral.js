@@ -1,5 +1,15 @@
 let offset = 0;
 const stroke = 20;
+let colors = [];
+
+function setupSpiral() {
+    //populate colors
+    for (let i = 0; i < 255; i = i + 5) {
+      let newColor = color(random(255), random(255), random(255), 255 - i);
+      colors.push(newColor);
+    }
+  
+}
 
 /**
  * Draw a circle with given radius and pitheta, extracting color from the position colorIndex
@@ -29,6 +39,9 @@ function shouldDrawHere(nextRadius, theta, colorIndex) {
 
   //if there are no more colors in the array, we would have an error
   if (colorIndex >= colors.length) return false;
+
+  //radius is completely out of bounds
+  if(nextRadius > Math.sqrt(2) * canvasSize) return false;
 
   //if point is fully outside of canvas we will not draw
   const htmlCoordiantes = polarToHtml(nextRadius, theta);
