@@ -1,6 +1,8 @@
 // const heartScale = 100;
 let heartScale = 0;
-const heartStroke = 8;
+const heartStroke = 16;
+
+let heartColor;
 
 /**
  * Get r for the given theta
@@ -17,7 +19,7 @@ function radiusForHeart(theta) {
 
 function heartSetup() {
   //set color
-  const heartColor = color(255, 0, 0);
+  heartColor = color(255, 0, 0);
   fill(heartColor);
 }
 
@@ -36,21 +38,28 @@ function updateHeartScale() {
  *
  */
 function drawInnerHearts(radius, piTheta) {
-  //get html coordinates
-  const htmlCoordinates = polarToHtml(radius, piTheta);
 
-  //adjust y axis
-  htmlCoordinates.y = htmlCoordinates.y - canvasSize / 3;
+  let nextRadius = radius;
+  while (nextRadius > 0) {
+    //get html coordinates
+    const htmlCoordinates = polarToHtml(nextRadius, piTheta);
 
-  //draw circle
-  circle(htmlCoordinates.x, htmlCoordinates.y, heartStroke);
+    //adjust y axis
+    htmlCoordinates.y = htmlCoordinates.y - canvasSize / 3;
+
+    //draw circle
+    fill(heartColor);
+    circle(htmlCoordinates.x, htmlCoordinates.y, heartStroke);
+
+    nextRadius -= heartStroke;
+  }
 }
 
 /**
  * draw hearts
  */
 function drawHearts() {
-  for (let theta = 0; theta < 360; theta = theta + 0.01) {
+  for (let theta = 0; theta < 360; theta = theta + 0.5) {
     //change theta to pi style
     const piTheta = degreesToRadians(theta);
 
