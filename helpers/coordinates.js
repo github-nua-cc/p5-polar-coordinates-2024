@@ -1,3 +1,10 @@
+
+/**
+ * Given a radius and an angle theta, transform this to html cooridnates
+ * @param {Number} radius
+ * @param {Number} theta
+ * @returns
+ */
 function polarToHtml(radius, theta) {
   //get x and y for cartesian
   const cartesianX = radius * cos(theta);
@@ -12,6 +19,11 @@ function polarToHtml(radius, theta) {
   return htmlCoordinates;
 }
 
+/**
+ * Given a theta in degrees, transform it to radians
+ * @param {Number} thetaInDegrees
+ * @returns
+ */
 function degreesToRadians(thetaInDegrees) {
   return (thetaInDegrees * PI) / 180;
 }

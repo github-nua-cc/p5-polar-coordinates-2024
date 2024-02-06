@@ -1,3 +1,6 @@
+//initially canvas size is zero
+let canvasSize = 0;
+
 //the archimedes spiral formula is r = a * theta, where a is a number of our choice
 // we can choose a to be any number, so let's choose something that looks good!
 function radiusForSpiral(theta) {
@@ -7,9 +10,6 @@ function radiusForSpiral(theta) {
 
 function setup() {
   noStroke();
-
-  //canvas size
-  canvasSize = 0;
 
   //colors
   colors = [];
@@ -27,13 +27,8 @@ function draw() {
   // create a canvas depending on the window size
   // windowWidth and windowHeight are variables given to us by by p5.js
   //get lower width or height as reference
-  if (windowWidth > windowHeight) {
-    canvasSize = windowHeight / 2;
-    createCanvas(canvasSize, canvasSize);
-  } else {
-    canvasSize = windowWidth / 2;
-    createCanvas(canvasSize, canvasSize);
-  }
+  canvasSize = getCanvasSize(windowWidth, windowHeight);
+  createCanvas(canvasSize, canvasSize);
 
   // set up background to greyscale 220
   background(220);
