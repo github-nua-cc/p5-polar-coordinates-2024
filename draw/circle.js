@@ -1,6 +1,13 @@
-let circleScale = 200;
+//stroke - change to change stroke of each circle
 const circleStroke = 40;
+
+//scale will be set at each draw - to allow resizing
+let circleScale = 0;
+
+//radius offset is updated to generate movemnet
 let radiusOffset = 0;
+
+//colors are populated as it draws
 let circleColors = [];
 
 /**
