@@ -1,6 +1,5 @@
 let circleScale = 200;
 const circleStroke = 40;
-// let circleIndexOffset = 0;
 let radiusOffset = 0;
 let circleColors = [];
 
