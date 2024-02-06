@@ -31,29 +31,28 @@ function degreesToRadians(thetaInDegrees) {
 // we can choose a to be any number, so let's choose something that looks good!
 function radiusForSpiral(theta) {
   // a is a ratio that has been found empirically
-  return (50 / 2880 * windowWidth) * theta;
+  return (50 / 2880) * windowWidth * theta;
 }
 
 function setup() {
-
-  // create a canvas of size windowWidth x windowHeight
-  // windowWidth and windowHeight are variables given to us by by p5.js
-  createCanvas(windowWidth, windowHeight);
-
   noStroke();
 }
 
 let offset = 0;
 
 function draw() {
+  // create a canvas of size windowWidth x windowHeight
+  // windowWidth and windowHeight are variables given to us by by p5.js
+  createCanvas(windowWidth, windowHeight);
+
   // set up background to greyscale 220
   background(220);
 
   //set stroke
-  const stroke = 20;
+  const stroke = 50;
 
   //drawing a circle using radians and degrees
-  for (let theta = 0; theta < 7 * 360; theta = theta + 0.1) {
+  for (let theta = 0; theta < 7 * 360; theta = theta + 0.5) {
     //change theta to pi style
     const piTheta = degreesToRadians(theta);
 
@@ -62,10 +61,26 @@ function draw() {
 
     //get html coordinates for this degree
     const htmlCoordinates = polarToHtml(radius, piTheta + offset);
-
-    //draw circle
+    fill(color(0, 200, 200));
     circle(htmlCoordinates.x, htmlCoordinates.y, stroke);
+
+    if (radius > stroke / 2) {
+      fill(color(200, 0, 200, 20));
+      const proxRadius = radius - stroke / 2;
+      const proxRadiusCoordinates = polarToHtml(proxRadius, piTheta + offset);
+      circle(proxRadiusCoordinates.x, proxRadiusCoordinates.y, stroke);
+
+      if (radius > stroke) {
+        fill(color(200, 200, 200, 20));
+        const proxRadius2 = radius - stroke;
+        const proxRadiusCoordinates2 = polarToHtml(
+          proxRadius2,
+          piTheta + offset
+        );
+        circle(proxRadiusCoordinates2.x, proxRadiusCoordinates2.y, stroke);
+      }
+    }
   }
-  
-  offset = offset + 0.01;
+
+  offset = offset + 0.04;
 }
