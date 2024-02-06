@@ -2,7 +2,6 @@
 let heartScale = 0;
 const heartStroke = 8;
 
-
 /**
  * Get r for the given theta
  * @param {Number} theta
@@ -23,6 +22,31 @@ function heartSetup() {
 }
 
 /**
+ * Update the scale of the heart for the next drawing
+ * In intervals of 0.5, resets at 100
+ */
+function updateHeartScale() {
+  heartScale += 0.5;
+  if (heartScale > 100) {
+    heartScale = 0;
+  }
+}
+
+/**
+ *
+ */
+function drawInnerHearts(radius, piTheta) {
+  //get html coordinates
+  const htmlCoordinates = polarToHtml(radius, piTheta);
+
+  //adjust y axis
+  htmlCoordinates.y = htmlCoordinates.y - canvasSize / 3;
+
+  //draw circle
+  circle(htmlCoordinates.x, htmlCoordinates.y, heartStroke);
+}
+
+/**
  * draw hearts
  */
 function drawHearts() {
@@ -33,18 +57,9 @@ function drawHearts() {
     //get radius of this theta
     const radius = radiusForHeart(piTheta);
 
-    //get html coordinates
-    const htmlCoordinates = polarToHtml(radius, piTheta);
-
-    //adjust y axis
-    htmlCoordinates.y = htmlCoordinates.y - canvasSize / 3;
-
-    //draw circle
-    circle(htmlCoordinates.x, htmlCoordinates.y, heartStroke);
+    drawInnerHearts(radius, piTheta);
   }
 
-  heartScale += 0.5;
-  if(heartScale > 100) {
-    heartScale = 0;
-  }
+  //calculate heart scale for the next drawing
+  updateHeartScale();
 }
