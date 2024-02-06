@@ -1,3 +1,6 @@
+//initially canvas size is zero
+let canvasSize = 0;
+
 /**
  * Calculate the canvas size for the current window width and window height
  * @returns
