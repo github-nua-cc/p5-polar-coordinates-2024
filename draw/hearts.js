@@ -1,4 +1,5 @@
-const heartScale = 100;
+// const heartScale = 100;
+let heartScale = 0;
 const heartStroke = 8;
 
 
@@ -40,5 +41,10 @@ function drawHearts() {
 
     //draw circle
     circle(htmlCoordinates.x, htmlCoordinates.y, heartStroke);
+  }
+
+  heartScale += 0.5;
+  if(heartScale > 100) {
+    heartScale = 0;
   }
 }

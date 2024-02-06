@@ -1,8 +1,8 @@
 function setup() {
   noStroke();
-// }
+}
 
-// function draw() {
+function draw() {
   setUpCanvas();
 
   // drawSpirals();
