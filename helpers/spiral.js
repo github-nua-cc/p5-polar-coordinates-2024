@@ -44,12 +44,6 @@ function shouldDrawHere(nextRadius, theta, colorIndex) {
   //if the next radius at which I am going to draw is bigger than stroke / 2, the point would be drawn before the original spiral has begun
   if (nextRadius < stroke / 2) return false;
 
-  //if there are no more colors in the array, we would have an error
-  // if (colorIndex >= colors.length) return false;
-
-  //radius is completely out of bounds
-  if (nextRadius > Math.sqrt(2) * canvasSize) return false;
-
   //if point is fully outside of canvas we will not draw
   const htmlCoordiantes = polarToHtml(nextRadius, theta);
   if (
