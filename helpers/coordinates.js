@@ -1,4 +1,3 @@
-
 /**
  * Given a radius and an angle theta, transform this to html cooridnates
  * @param {Number} radius

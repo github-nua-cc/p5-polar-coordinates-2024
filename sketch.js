@@ -15,5 +15,7 @@ function setup() {
 function draw() {
   setUpCanvas();
 
-  drawSpirals();
+  // drawSpirals();
+
+  drawHearts();
 }
