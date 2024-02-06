@@ -1,25 +1,14 @@
-// Convert a radius and theta to to an x and y object
-// In order to use this function, we can do the following anywhere in the code:
-// const cartesian = polarToCartesian(radius, theta);
-// If we use cartesian.x afterwards, that contains the x coordinate value
-// if we use cartesian.y afterwards, that contains the y coordinate value
-function polarToCartesian(radius, theta) {
-  return { x: radius * cos(theta), y: -radius * sin(theta) };
-}
-
-// Convert an x and y in cartesian to html
-// In order to use this function, we can do the following anywhere in the code:
-// const html = cartesianToHtml(cartesian); -> where cartesian is an object of type {x: xCoordinate, y: yCoordinate}
-// If we use html.x afterwards, that contains the x coordinate value in html form
-// if we use html.y afterwards, that contains the y coordinate value in html form
-function cartesianToHtml(cartesian) {
-  const centre = { x: canvasSize / 2, y: canvasSize / 2 };
-  return { x: centre.x + cartesian.x, y: centre.y + cartesian.y };
-}
-
 function polarToHtml(radius, theta) {
-  const cartesianCoordinates = polarToCartesian(radius, theta);
-  const htmlCoordinates = cartesianToHtml(cartesianCoordinates);
+  //get x and y for cartesian
+  const cartesianX = radius * cos(theta);
+  const cartesianY = radius * sin(theta);
+
+  //get x and y for html
+  const htmlX = canvasSize / 2 + cartesianX;
+  const htmlY = canvasSize / 2 - cartesianY;
+
+  //build object from coordinates
+  const htmlCoordinates = { x: htmlX, y: htmlY };
   return htmlCoordinates;
 }
 
