@@ -1,5 +1,9 @@
 function setup() {
   noStroke();
+
+  setUpCanvas();
+
+  circleSetup();
 }
 
 function draw() {
@@ -7,5 +11,7 @@ function draw() {
 
   // drawSpirals();
 
-  drawHearts();
+  // drawHearts();
+
+  drawCircle();
 }
