@@ -31,31 +31,6 @@ function drawACircleWithIndex(radius, piTheta, colorIndex) {
   circle(htmlCoordinates.x, htmlCoordinates.y, stroke);
 }
 
-/**
- * Check if we should draw a point at the given radius. We will not draw a point when:
- * - radius is so small that it would overlapp with the beginning of the spiral
- * - colorIndex is out of range (we don't have enough colors)
- * @param {Number} radius in pixels
- * @param {Number} theta in radians
- * @param {Number} colorIndex index of colors array
- * @returns
- */
-function shouldDrawHere(nextRadius, theta, colorIndex) {
-  //if the next radius at which I am going to draw is bigger than stroke / 2, the point would be drawn before the original spiral has begun
-  if (nextRadius < stroke / 2) return false;
-
-  //if point is fully outside of canvas we will not draw
-  const htmlCoordiantes = polarToHtml(nextRadius, theta);
-  if (
-    htmlCoordiantes.x > canvasSize + stroke ||
-    htmlCoordiantes.y > canvasSize + stroke
-  )
-    return false;
-
-  //any other case is fine to draw
-  return true;
-}
-
 function drawPointsAtThisRadiusTheta(radius, piTheta) {
   //nextRadius is the radius at which we are drawing the next point which will be update throuhgouth the while
   let nextRadius = radius;
