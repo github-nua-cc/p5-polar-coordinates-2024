@@ -23,8 +23,6 @@ function setUpCanvas() {
   background(220);
 }
 
-
-
 /**
  * Check if we should draw a point at the given radius. We will not draw a point when:
  * - radius is so small that it would overlapp with the beginning of the spiral
