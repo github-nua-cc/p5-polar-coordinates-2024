@@ -11,11 +11,6 @@ let circleColors = [];
 function radiusForCircle() {
   return circleScale;
 }
-
-const circleSetup = () => {
-  // frameRate(5);
-};
-
 /**
  * draw all the circles in the inside
  * @param {Number} radius

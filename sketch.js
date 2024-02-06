@@ -3,7 +3,7 @@ function setup() {
 
   setUpCanvas();
 
-  circleSetup();
+  // heartSetup();
 }
 
 function draw() {
