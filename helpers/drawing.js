@@ -17,3 +17,23 @@ function newRandomColor() {
   //return new color
   return newColor;
 }
+
+/**
+ * Draw a point of random color at the given radius and theta
+ * @param {Number} radius in pixels
+ * @param {Number} theta in in degrees
+ */
+function drawWithRandomColorAtPoint(radius, theta) {
+  //generate new random color
+  const color = newRandomColor();
+  fill(color);
+
+  //get theta in radians
+  const thetaInRadians = degreesToRadians(theta);
+
+  //get html coordinates
+  const htmlCoordinates = polarToHtml(radius, thetaInRadians);
+
+  //draw circle using a size of shapeStroke
+  circle(htmlCoordinates.x, htmlCoordinates.y, shapeStroke);
+}

@@ -12,41 +12,21 @@ function setup() {
 function draw() {
   //draw a few points using polar coordinates
   let radius = 0;
-  theta = degreesToRadians(0);
 
   //middle
-  let color = newRandomColor();
-  fill(color);
-  let htmlCoordinates = polarToHtml(radius, theta);
-  circle(htmlCoordinates.x, htmlCoordinates.y, shapeStroke);
+  drawWithRandomColorAtPoint(0, 0);
 
   radius = 50;
 
   //right
-  color = newRandomColor();
-  fill(color);
-  theta = degreesToRadians(0);
-  htmlCoordinates = polarToHtml(radius, theta);
-  circle(htmlCoordinates.x, htmlCoordinates.y, shapeStroke);
+  drawWithRandomColorAtPoint(radius, 0);
 
   //up
-  color = newRandomColor();
-  fill(color);
-  theta = degreesToRadians(90);
-  htmlCoordinates = polarToHtml(radius, theta);
-  circle(htmlCoordinates.x, htmlCoordinates.y, shapeStroke);
+  drawWithRandomColorAtPoint(radius, 90);
 
   //left
-  color = newRandomColor();
-  fill(color);
-  theta = degreesToRadians(180);
-  htmlCoordinates = polarToHtml(radius, theta);
-  circle(htmlCoordinates.x, htmlCoordinates.y, shapeStroke);
+  drawWithRandomColorAtPoint(radius, 180);
 
   //down
-  color = newRandomColor();
-  fill(color);
-  theta = degreesToRadians(270);
-  htmlCoordinates = polarToHtml(radius, theta);
-  circle(htmlCoordinates.x, htmlCoordinates.y, shapeStroke);
+  drawWithRandomColorAtPoint(radius, 270);
 }
