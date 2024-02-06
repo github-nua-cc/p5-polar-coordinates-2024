@@ -1,0 +1,19 @@
+html,
+body {
+  /* margin and padding */
+  margin: 0;
+  padding: 0;
+  /* background color */
+  background-color: black;
+  /* height */
+  height: 100%;
+  /* alignment */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+canvas {
+  display: block;
+  /* give canvas an outline */
+  outline: 10px solid rgb(238, 238, 238);
+}

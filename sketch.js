@@ -13,7 +13,7 @@ function polarToCartesian(radius, theta) {
 // If we use html.x afterwards, that contains the x coordinate value in html form
 // if we use html.y afterwards, that contains the y coordinate value in html form
 function cartesianToHtml(cartesian) {
-  const centre = { x: windowWidth / 2, y: windowHeight / 2 };
+  const centre = { x: canvasSize / 2, y: canvasSize / 2 };
   return { x: centre.x + cartesian.x, y: centre.y + cartesian.y };
 }
 
@@ -37,6 +37,10 @@ function radiusForSpiral(theta) {
 function setup() {
   noStroke();
 
+  //canvas size
+  canvasSize = 0;
+
+  //colors
   colors = [];
 
   //populate colors
@@ -49,18 +53,25 @@ function setup() {
 let offset = 0;
 
 function draw() {
-  // create a canvas of size windowWidth x windowHeight
+  // create a canvas depending on the window size
   // windowWidth and windowHeight are variables given to us by by p5.js
-  createCanvas(windowWidth, windowHeight);
+  //get lower width or height as reference
+  if (windowWidth > windowHeight) {
+    canvasSize = windowHeight / 2;
+    createCanvas(canvasSize, canvasSize);
+  } else {
+    canvasSize = windowWidth / 2;
+    createCanvas(canvasSize, canvasSize);
+  }
 
   // set up background to greyscale 220
   background(220);
 
   //set stroke
-  let stroke = 10;
+  let stroke = 20;
 
   //drawing a circle using radians and degrees
-  for (let theta = 0; theta < 7 * 360; theta = theta + 2.5) {
+  for (let theta = 0; theta < 7 * 360; theta = theta + 1) {
     //change theta to pi style
     const piTheta = degreesToRadians(theta);
 
@@ -86,24 +97,6 @@ function draw() {
       nextRadius = nextRadius - stroke / 2;
       colorIndex++;
     }
-    /*
-    if (radius > stroke / 2) {
-      fill(color(200, 0, 200, 20));
-      const proxRadius = radius - stroke / 2;
-      const proxRadiusCoordinates = polarToHtml(proxRadius, piTheta + offset);
-      circle(proxRadiusCoordinates.x, proxRadiusCoordinates.y, stroke);
-
-      if (radius > stroke) {
-        fill(color(200, 200, 200, 20));
-        const proxRadius2 = radius - stroke;
-        const proxRadiusCoordinates2 = polarToHtml(
-          proxRadius2,
-          piTheta + offset
-        );
-        circle(proxRadiusCoordinates2.x, proxRadiusCoordinates2.y, stroke);
-      }
-    }
-    */
   }
 
   offset = offset + 0.04;
