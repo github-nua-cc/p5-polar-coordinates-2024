@@ -1,7 +1,7 @@
 /**
  * Given a radius and an angle theta, transform this to html cooridnates
- * @param {Number} radius
- * @param {Number} theta
+ * @param {Number} radius in pixels
+ * @param {Number} theta in radians
  * @returns
  */
 function polarToHtml(radius, theta) {

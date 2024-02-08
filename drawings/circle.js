@@ -9,15 +9,6 @@ let radiusOffset = 0;
 
 //colors are populated as it draws
 let circleColors = [];
-
-/**
- * Get r for the given theta
- * @param {Number} theta
- * @returns
- */
-function radiusForCircle() {
-  return circleScale;
-}
 /**
  * draw all the circles in the inside
  * @param {Number} radius
@@ -67,8 +58,9 @@ function drawInnerCircles(radius, piTheta) {
 }
 
 /**
- * draw hearts
+ * draw many circles one inside the other and move them
  */
+/*
 function drawCircle() {
   circleScale = canvasSize;
 
@@ -83,4 +75,26 @@ function drawCircle() {
   }
 
   radiusOffset += 0.5;
+}
+*/
+
+
+/**
+ * Draw a circle of radius 100 and stroke 20
+ */
+function drawCircle() {
+
+  const circleRadius = 100;
+
+  //go through all the possible angles witn an increment of 0.5 and draw a point with the same radius
+  for(let theta = 0; theta < 360; theta = theta + 0.5) {
+    //transform the theta to radians
+    const radiansTheta = degreesToRadians(theta);
+
+    //get html coordinates for that point
+    const htmlCoordinates = polarToHtml(circleRadius, radiansTheta);
+
+    //draw a point in those coordinates
+    circle(htmlCoordinates.x, htmlCoordinates.y, 20);
+  }
 }

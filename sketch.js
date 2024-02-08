@@ -1,17 +1,16 @@
 function setup() {
   noStroke();
 
-  setUpCanvas();
+  noLoop();
 
-  // heartSetup();
+  setUpCanvas();
 }
 
 function draw() {
-  setUpCanvas();
+  //set a random color to be the fill
+  const randomColor = generateRandomColor();
+  fill(randomColor);
 
-  // drawSpirals();
-
-  // drawHearts();
-
+  //draw a circle
   drawCircle();
 }

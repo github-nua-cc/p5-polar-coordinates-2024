@@ -7,15 +7,15 @@ let canvasSize = 0;
  */
 function getCanvasSize() {
   if (windowWidth > windowHeight) {
-    return (2 * windowHeight) / 3;
+    return  windowHeight / 2;
   }
   if (windowHeight > windowWidth) {
-    return (2 * windowHeight) / 3;
+    return windowWidth / 2;
   }
 }
 
 /**
- * set up the canvas as we want it
+ * set up the canvas using the window as reference
  */
 function setUpCanvas() {
   // get canvas size from helpers
@@ -48,4 +48,44 @@ function shouldDrawHere(nextRadius, theta) {
 
   //any other case is fine to draw
   return true;
+}
+
+/**
+ * Generate a random color with given alpha
+ * @param {Number} alpha from 0 to 255
+ * @returns 
+ */
+function generateRandomColor(alpha = 255) {
+
+  //generate random rgbs
+  const r = random(255);
+  const g = random(255);
+  const b = random(255);
+
+  //get new color
+  const newColor = color(r, g, b, alpha);
+
+  //return new color
+  return newColor;
+}
+
+/**
+ * Draw a point using a randomly generated color given the polar coordinates
+ * @param {Number} radius in pixels
+ * @param {Number} theta in degrees
+ */
+function drawPointWithRandomColorAndPolarCoordinates(radius, theta) {
+  
+  //generate and set fill to a new random color
+  const randomColor = generateRandomColor();
+  fill(randomColor);
+
+  //get theta in radians
+  const radiansTheta = degreesToRadians(theta);
+
+  //get html coordinates
+  const htmlCoordinates = polarToHtml(radius, radiansTheta);
+
+  //draw the point
+  circle(htmlCoordinates.x, htmlCoordinates.y, 50);
 }
