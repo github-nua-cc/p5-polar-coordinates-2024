@@ -64,7 +64,7 @@ function radiusForSpiral(theta) {
  * function that manages the drawing of all spirals
  */
 function drawSpirals() {
-  //drawing a circle using radians and degrees
+  //drawing a circle using degrees
   for (let theta = 0; theta < 7 * 360; theta = theta + 1) {
     //change theta to pi style
     const piTheta = degreesToRadians(theta);
@@ -77,4 +77,24 @@ function drawSpirals() {
   }
 
   offset = offset + 0.04;
+}
+
+/**
+ * draw one spiral
+ */
+function drawSpiral() {
+  //go through all the possible angles witn an increment of 0.5 and draw a point with changing radius
+  for(let theta = 0; theta < 5 * 360; theta = theta + 0.5) {
+    //transform the theta to radians
+    const radiansTheta = degreesToRadians(theta);
+
+    //calclulate a new radius bigger than the one before
+    const radius = 10 * radiansTheta;
+
+    //get html coordinates
+    const htmlCoordinates = polarToHtml(radius, radiansTheta);
+
+    //draw a point at these coordinates
+    circle(htmlCoordinates.x, htmlCoordinates.y, 16);
+  }
 }
