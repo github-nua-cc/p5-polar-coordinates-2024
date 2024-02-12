@@ -11,9 +11,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  font-family: sans-serif;
+  font-size: 30px;
 }
 canvas {
   display: block;
   /* give canvas an outline */
   outline: 10px solid rgb(238, 238, 238);
+}
+
+div {
+  color: white;
+  margin-bottom: 20px;
 }
