@@ -89,3 +89,13 @@ function drawPointWithRandomColorAndPolarCoordinates(radius, theta) {
   //draw the point
   circle(htmlCoordinates.x, htmlCoordinates.y, 50);
 }
+
+/**
+ * returns the yCoordinate value plus the ratio multiplied by the canvas size
+ * @param {Number} yCoordinate y coordinate that needs translating
+ * @param {Number} ratio canvasSize proportion by which to translate y
+ * @returns 
+ */
+function yTranslation(yCoordinate, ratio) {
+  return yCoordinate + ratio * canvasSize;
+}

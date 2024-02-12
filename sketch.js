@@ -17,7 +17,8 @@ function draw() {
   //fill drawing with random color
   fill(randomColor);
 
-  //draw a spiral
-  drawSpiral();
+  //draw a heart
+  drawHeart();
 
+  // drawSpiral();
 }
