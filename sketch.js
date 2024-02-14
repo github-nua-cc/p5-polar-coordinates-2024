@@ -12,13 +12,14 @@ function setup() {
 
 function draw() {
   //reset canvas
-  setUpCanvas();
+  // setUpCanvas();
+  background(0, 10);
 
   //fill drawing with random color
   fill(randomColor);
 
   //draw a heart
-  drawHeart();
+  // drawHeart();
 
-  // drawSpiral();
+  drawSpiral();
 }

@@ -23,7 +23,7 @@ function setUpCanvas() {
   createCanvas(canvasSize, canvasSize);
 
   // set up background to greyscale 220
-  background(220);
+  background(0);
 }
 
 /**
