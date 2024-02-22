@@ -4,7 +4,7 @@
   position: absolute;
 
   /* width and padding */
-  width: 300px;
+  width: 400px;
   padding: 20px;
 
   /* light background color */
@@ -19,6 +19,7 @@
 .shape-info-element {
   margin-top: 10px;
   margin-bottom: 10px;
+  font-weight: bold;
 }
 
 /* there are some clickable buttons inside the info container */
