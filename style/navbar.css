@@ -81,3 +81,31 @@ a {
   /* margin left auto so it goes at max right as possible within margin */
   margin-left: auto;
 }
+
+/* shape title is at middle of top of the screen */
+#shape-title {
+
+  /* set at top */
+  position: absolute;
+  top: 0px;
+
+  /* same size as nav bar */
+  width: 100%;
+  height: 60px;
+
+  /* font slightly bigger */
+  font-size: 30px;
+  font-family: "Courier New", Courier, monospace;
+
+  /* display flex and aligned */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(100, 100, 100, 0.5);
+}
+
+/* upon nav-container hover, show havigation bar */
+#nav-container:hover #shape-title {
+  transform: translateY(-100px);
+}

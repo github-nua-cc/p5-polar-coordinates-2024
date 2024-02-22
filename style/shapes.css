@@ -3,6 +3,9 @@
   /* position absolute so it's floating on top of figure */
   position: absolute;
 
+  /* margin for info container */
+  margin-top: 80px;
+
   /* width and padding */
   width: 400px;
   padding: 20px;
@@ -35,20 +38,4 @@ button {
 button:hover {
   background-color: white;
   color: grey;
-}
-
-/* shape title is at middle of top of the screen */
-#shape-title {
-  /* same size as nav bar */
-  width: 100%;
-  height: 60px;
-
-  /* font slightly bigger */
-  font-size: 30px;
-  font-family: "Courier New", Courier, monospace;
-
-  /* display flex and aligned */
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
