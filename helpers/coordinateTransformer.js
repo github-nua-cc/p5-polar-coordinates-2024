@@ -7,17 +7,8 @@
 function polarToCartesian(radius, theta) {
   //get x and y for cartesian
   const cartesianX = radius * cos(theta);
-  const cartesianY = radius * sin(theta);
+  const cartesianY = - radius * sin(theta);
   //build object from coordinates
   const cartesianCoordinates = { x: cartesianX, y: cartesianY };
   return cartesianCoordinates;
-}
-
-/**
- * Given a theta in degrees, transform it to radians
- * @param {Number} thetaInDegrees
- * @returns
- */
-function degreesToRadians(thetaInDegrees) {
-  return (thetaInDegrees * PI) / 180;
 }

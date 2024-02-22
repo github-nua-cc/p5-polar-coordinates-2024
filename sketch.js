@@ -2,7 +2,7 @@ let randomColor;
 
 function setup() {
   //create canvas of wohle screen
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(windowWidth, windowHeight - 60);
 
   // set up background to greyscale 220
   background(0);
@@ -21,13 +21,15 @@ function setup() {
 }
 
 function draw() {
-
   //translate to middle
-  translate(windowWidth / 2, windowHeight / 2);
+  translate(width / 2, height / 2);
 
   //draw the circle
   // drawCircle();
 
   //draw the spiral
   drawSpiral();
+
+  //draw the heart
+  // drawHeart();
 }
