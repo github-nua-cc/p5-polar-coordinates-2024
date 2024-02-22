@@ -1,0 +1,53 @@
+/* information displayed in a container */
+#shape-info-container {
+  /* position absolute so it's floating on top of figure */
+  position: absolute;
+
+  /* width and padding */
+  width: 300px;
+  padding: 20px;
+
+  /* light background color */
+  background-color: rgb(213, 213, 213, 0.4);
+
+  /* display flex and col to align elements correctly */
+  display: flex;
+  flex-direction: column;
+}
+
+/* each of the elements inside the info container */
+.shape-info-element {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* there are some clickable buttons inside the info container */
+button {
+  all: unset;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px;
+  cursor: pointer;
+  background-color: grey;
+}
+
+button:hover {
+  background-color: white;
+  color: grey;
+}
+
+/* shape title is at middle of top of the screen */
+#shape-title {
+  /* same size as nav bar */
+  width: 100%;
+  height: 60px;
+
+  /* font slightly bigger */
+  font-size: 30px;
+  font-family: "Courier New", Courier, monospace;
+
+  /* display flex and aligned */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,6 +1,8 @@
 const spiralRotationValue = document.getElementById("spiral-rotation-value");
+const toggleNoise = document.getElementById("toggle-noise-button");
 
 let spiralOffset = 0;
+let withNoise = false;
 
 /**
  * draw one spiral. This is the one that we will use in class.
@@ -14,14 +16,25 @@ function drawSpiral() {
     //calclulate a new radius bigger than the one before
     const radius = 0.3 * theta;
 
+    // calculate noise if needed
+    let currentNoise = 0;
+    if (withNoise) {
+      currentNoise = 30 * noise(radius);
+    }
+
+    const noisedRadius = radius + currentNoise;
+
     //get html coordinates
-    const htmlCoordinates = polarToCartesian(radius, theta + spiralOffset);
+    const htmlCoordinates = polarToCartesian(
+      noisedRadius,
+      theta + spiralOffset
+    );
 
     //draw a point at these coordinates
     circle(htmlCoordinates.x, htmlCoordinates.y, 16);
   }
 
-  spiralOffset = spiralOffset - 1;
+  // spiralOffset = spiralOffset - 1;
 
   //update html info
   spiralRotationValue.innerHTML = floor(spiralOffset) % 360;
@@ -42,3 +55,14 @@ function mouseWheel(event) {
   //return false will block page scrolling
   return false;
 }
+
+//on click, add or remove noise
+toggleNoise.onclick = () => {
+  withNoise = !withNoise;
+
+  if (withNoise) {
+    toggleNoise.innerHTML = "Remove Noise";
+  } else {
+    toggleNoise.innerHTML = "Add Noise";
+  }
+};

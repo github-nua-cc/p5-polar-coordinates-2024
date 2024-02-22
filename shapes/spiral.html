@@ -12,6 +12,7 @@
     <!-- css -->
     <link rel="stylesheet" href="../styles.css" />
     <link rel="stylesheet" href="../style/navbar.css" />
+    <link rel="stylesheet" href="../style/shapes.css" />
     <title>P5.js Project</title>
   </head>
   <body>
@@ -33,13 +34,21 @@
 
     <!-- main  -->
     <main>
-      <div>
-        Spiral Rotated By: <span id="spiral-rotation-value">0</span> degrees
+      <!-- title of shape -->
+      <div id="shape-title">Scrollable Spiral</div>
+
+      <!-- shape information container and color changing -->
+      <div id="shape-info-container">
+        <div class="shape-info-element">
+          Spiral Rotated By: <span id="spiral-rotation-value">0</span> degrees
+        </div>
+        <div clas="shape-info-element">
+          <button id="new-color-button">New Color</button>
+        </div>
+        <div class="shape-info-element">
+          <button id="toggle-noise-button">Add Noise</button>
+        </div>
       </div>
-      <div>
-        Heart Offsetted By: <span id="heart-offset-value">0</span> pixels
-      </div>
-      <div><button id="new-color-button">New Color</button></div>
     </main>
   </body>
 </html>

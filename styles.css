@@ -23,17 +23,3 @@ body {
 canvas {
   display: block;
 }
-
-button {
-  all: unset;
-  cursor: pointer;
-  background-color: grey;
-  padding: 5px;
-  border-radius: 5px;
-  box-shadow: 0 0 5px;
-}
-
-button:hover {
-  background-color: white;
-  color: grey;
-}

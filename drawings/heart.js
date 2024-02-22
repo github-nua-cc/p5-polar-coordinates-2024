@@ -1,5 +1,5 @@
 let heartOffset = 0;
-const heartOffsetValue = document.getElementById('heart-offset-value');
+const heartOffsetValue = document.getElementById("heart-offset-value");
 
 /**
  * Get r for the given theta
