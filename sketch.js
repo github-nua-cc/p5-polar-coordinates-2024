@@ -13,7 +13,7 @@ function setup() {
 function draw() {
   //reset canvas
   // setUpCanvas();
-  background(0, 10);
+  background(0);
 
   //fill drawing with random color
   fill(randomColor);

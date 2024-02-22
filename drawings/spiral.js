@@ -83,22 +83,29 @@ function drawSpirals() {
  * draw one spiral. This is the one that we will use in class.
  */
 function drawSpiral() {
+
+  noLoop();
+
   //go through all the possible angles witn an increment of 0.5 and draw a point with changing radius
-  for (let theta = 0; theta < 5 * 360; theta = theta + 0.5) {
+  for (let theta = 0; theta < 6 * 360; theta = theta + 0.1) {
     //transform the theta to radians
     const radiansTheta = degreesToRadians(theta);
+    console.log(radiansTheta);
 
     //calclulate a new radius bigger than the one before
     const radius = 10 * radiansTheta;
 
+    const radiusNoise = 30 * noise(radius);
+    // const radiusNoise = 0;
+
     //get html coordinates
-    const htmlCoordinates = polarToHtml(radius, radiansTheta + offset);
+    const htmlCoordinates = polarToHtml(radius + radiusNoise, radiansTheta + offset);
 
     //draw a point at these coordinates
     circle(htmlCoordinates.x, htmlCoordinates.y, 16);
   }
 
-  // offset = offset + 0.1;
+  // offset = offset - 0.1;
 }
 
 const scrollValue = document.getElementById("scroll-value");
