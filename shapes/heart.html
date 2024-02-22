@@ -12,19 +12,23 @@
     <title>P5.js Project</title>
   </head>
   <body>
-    <div id="nav-container">
-      <div id="nav-bar">
-        <nav>
-          <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="circle.html">Circle</a></li>
-            <li><a href="heart.html">Heart</a></li>
-            <li><a href="spiral.html">Spiral</a></li>
-          </ul>
-        </nav>
+     <!-- nav container so it's hideable -->
+     <div id="nav-container">
+      <!-- actual nav bar -->
+      <nav id="nav-bar">
+        <!-- navigation bar items -->
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="circle.html">Circle</a></li>
+          <li id="current-page"><a href="heart.html">Heart</a></li>
+          <li><a href="spiral.html">Spiral</a></li>
+        </ul>
+        <!-- hr at bottom -->
         <hr />
-      </div>
+      </nav>
     </div>
+
+    <!-- main -->
     <main>
       <div>
         Spiral Rotated By: <span id="spiral-rotation-value">0</span> degrees

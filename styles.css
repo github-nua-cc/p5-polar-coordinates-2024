@@ -1,3 +1,7 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 html,
 body {
   /* margin and padding */
@@ -9,18 +13,13 @@ body {
   /* font */
   font-family: sans-serif;
   font-size: 30px;
+  color: white;
 
   /* remove scroll */
   overflow: hidden;
 }
 canvas {
   display: block;
-}
-
-div {
-  color: white;
-  margin-top: 10px;
-  margin-bottom: 10px;
 }
 
 button {

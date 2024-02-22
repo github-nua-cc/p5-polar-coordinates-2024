@@ -7,7 +7,12 @@
 
 /* navigation bar is hidden by default */
 #nav-bar {
+  height: 100%;
   transform: translateY(-150%);
+}
+
+nav {
+  height: 100%;
 }
 
 /* upon nav-container hover, show havigation bar */
@@ -15,15 +20,15 @@
   transform: translateY(0);
 }
 
-
 /* contains list of clickable menu */
 ul {
+  height: 100%;
   /* remove bullets */
   list-style-type: none;
 
   /* remove margin */
   margin: 0;
-  padding: 10px;
+  padding: 0;
 
   /* display flex */
   display: flex;
@@ -32,12 +37,25 @@ ul {
 
 /* each of the elements - 4 pages, ergo 25% each. % will need changing if # of pages changes */
 li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 25%;
-  text-align: center;
+  height: 100%;
+  margin: 0;
+}
+
+li:hover {
+  background-color: rgb(122, 198, 122);
 }
 
 /* remove decoration from links and set color to white */
 a {
   text-decoration: none;
   color: white;
+}
+
+/* change style of current page */
+#current-page {
+  background-color: green;
 }
