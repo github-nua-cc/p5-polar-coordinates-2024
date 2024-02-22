@@ -1,7 +1,7 @@
 /* container has position absolute so it won't take space from the canvas */
 #nav-container {
   position: absolute;
-  height: 100px;
+  height: 60px;
   width: 100%;
 }
 
@@ -23,6 +23,7 @@ nav {
 /* contains list of clickable menu */
 ul {
   height: 100%;
+  width: 100%;
   /* remove bullets */
   list-style-type: none;
 
@@ -37,25 +38,46 @@ ul {
 
 /* each of the elements - 4 pages, ergo 25% each. % will need changing if # of pages changes */
 li {
+  /* width / height / margin */
+  width: 200px;
+  height: 100%;
+  margin: 0;
+
+  /* display flex */
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25%;
-  height: 100%;
-  margin: 0;
 }
 
+/* change background of nav elements on hover */
 li:hover {
   background-color: rgb(122, 198, 122);
 }
 
-/* remove decoration from links and set color to white */
+/* remove decoration from links and set color to page default */
 a {
   text-decoration: none;
-  color: white;
+  color: unset;
 }
 
-/* change style of current page */
+/* change style to mark which is the current page */
 #current-page {
   background-color: green;
+}
+
+/* at end of navigation bar there's an unclickable text item */
+#last-navbar-item {
+  /* reset background color */
+  background-color: unset;
+
+  /* width auto depending on text */
+  width: auto;
+
+  /* align text to bottom */
+  align-items: last baseline;
+
+  /* margin on the right */
+  margin-right: 20px;
+  /* margin left auto so it goes at max right as possible within margin */
+  margin-left: auto;
 }
