@@ -1,0 +1,36 @@
+ul {
+  /* remove bullets */
+  list-style-type: none;
+
+  /* remove margin */
+  margin: 0;
+  padding: 10px;
+
+  /* display flex */
+  display: flex;
+  flex-direction: row;
+}
+
+li {
+  width: 33%;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+#nav-bar {
+  transform: translateY(-150%); /* normal, hidden state */
+}
+
+#nav-container:hover #nav-bar {
+  transform: translateY(0); /* when parent is hovered */
+}
+
+#nav-container {
+  position: absolute;
+  height: 100px;
+  width: 100%;
+}
