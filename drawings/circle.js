@@ -2,7 +2,9 @@
  * Draw a circle using the polar coordinates of radius 200 and stroke 20
  */
 function drawCircle() {
+  // define radius
   const circleRadius = 200;
+  // define stroke
   const circleStroke = 20;
 
   //go through all the possible angles with an increment of 0.5 and draw a point with the same radius
