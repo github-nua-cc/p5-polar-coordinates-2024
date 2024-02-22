@@ -3,6 +3,8 @@ const toggleNoise = document.getElementById("toggle-noise-button");
 
 let spiralOffset = 0;
 let withNoise = false;
+let deltaIncrement = 0;
+let mouseDown = false;
 
 /**
  * draw one spiral. This is the one that we will use in class.
@@ -40,7 +42,14 @@ function drawSpiral() {
     }
   }
 
-  // spiralOffset = spiralOffset - 1;
+  // if(!mouseDown) {
+  // console.log(deltaIncrement);
+  const increaseBy = 0.1;
+  if (deltaIncrement > 0) deltaIncrement -= increaseBy;
+  if (deltaIncrement < 0) deltaIncrement += increaseBy;
+  if (abs(deltaIncrement) <= increaseBy) deltaIncrement = 0;
+  spiralOffset = spiralOffset + deltaIncrement;
+  // }
 
   //update html info
   spiralRotationValue.innerHTML = floor(spiralOffset) % 360;
@@ -57,6 +66,11 @@ function drawSpiral() {
 function mouseWheel(event) {
   // add the value stored in event.delta to the offset
   spiralOffset = spiralOffset + event.delta / 10;
+
+  console.log(event.delta / 10);
+  if (abs(event.delta / 10) > abs(deltaIncrement)) deltaIncrement = event.delta / 10;
+
+  console.log(deltaIncrement);
 
   //return false will block page scrolling
   return false;
