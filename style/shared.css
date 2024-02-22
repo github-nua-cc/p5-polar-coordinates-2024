@@ -19,7 +19,3 @@ body {
   /* remove scroll */
   overflow: hidden;
 }
-
-canvas {
-  display: block;
-}

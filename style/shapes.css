@@ -16,6 +16,8 @@
   /* display flex and col to align elements correctly */
   display: flex;
   flex-direction: column;
+
+  z-index: 2;
 }
 
 /* each of the elements inside the info container */
@@ -38,4 +40,15 @@ button {
 button:hover {
   background-color: white;
   color: grey;
+}
+
+canvas {
+  display: block;
+
+  /* positioning below nav bar */
+  position: absolute;
+  margin-top: 60px;
+
+  /* index 1 to go behind floating info box */
+  z-index: 1; 
 }
