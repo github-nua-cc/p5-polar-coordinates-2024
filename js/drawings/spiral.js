@@ -42,14 +42,12 @@ function drawSpiral() {
     }
   }
 
-  // if(!mouseDown) {
-  // console.log(deltaIncrement);
+  // update offset and delta increment if necessary
   const increaseBy = 0.1;
   if (deltaIncrement > 0) deltaIncrement -= increaseBy;
   if (deltaIncrement < 0) deltaIncrement += increaseBy;
   if (abs(deltaIncrement) <= increaseBy) deltaIncrement = 0;
   spiralOffset = spiralOffset + deltaIncrement;
-  // }
 
   //update html info
   spiralRotationValue.innerHTML = floor(spiralOffset) % 360;
@@ -67,10 +65,8 @@ function mouseWheel(event) {
   // add the value stored in event.delta to the offset
   spiralOffset = spiralOffset + event.delta / 10;
 
-  console.log(event.delta / 10);
+  //generate a delta increment
   if (abs(event.delta / 10) > abs(deltaIncrement)) deltaIncrement = event.delta / 10;
-
-  console.log(deltaIncrement);
 
   //return false will block page scrolling
   return false;
