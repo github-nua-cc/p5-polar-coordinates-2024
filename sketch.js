@@ -1,3 +1,7 @@
+//get current path
+const path = window.location.pathname;
+const currentPage = path.substring(path.lastIndexOf("/") + 1);
+
 function setup() {
   //create canvas of wohle screen
   createCanvas(windowWidth, windowHeight - 60);
@@ -19,16 +23,22 @@ function setup() {
 }
 
 function draw() {
-
   //translate to middle
   translate(width / 2, height / 2);
 
-  //draw the circle
-  // drawCircle();
-
-  //draw the spiral
-  // drawSpiral();
-
-  //draw the heart
-  drawHeart();
+  // switch according to page and draw each figure
+  switch (currentPage) {
+    case "circle.html": {
+      drawCircle();
+      break;
+    }
+    case "spiral.html": {
+      drawSpiral();
+      break;
+    }
+    case "heart.html": {
+      drawHeart();
+      break;
+    }
+  }
 }
