@@ -21,9 +21,13 @@ function setup() {
 }
 
 function draw() {
+
   //translate to middle
   translate(windowWidth / 2, windowHeight / 2);
 
   //draw the circle
   // drawCircle();
+
+  //draw the spiral
+  drawSpiral();
 }
