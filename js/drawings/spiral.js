@@ -12,7 +12,8 @@ function drawSpiral() {
   background(0, 30);
 
   //go through all the possible angles witn an increment of 0.5 and draw a point with changing radius
-  for (let theta = 0; theta < 10 * 360; theta = theta + 0.1) {
+  let increment = 5;
+  for (let theta = 0; theta < 10 * 360; theta = theta + increment) {
     //calclulate a new radius bigger than the one before
     const radius = 0.3 * theta;
 
@@ -32,6 +33,11 @@ function drawSpiral() {
 
     //draw a point at these coordinates
     circle(htmlCoordinates.x, htmlCoordinates.y, 16);
+
+    if (theta % 360 === 0) {
+      // update increment
+      increment = increment / 2;
+    }
   }
 
   // spiralOffset = spiralOffset - 1;
