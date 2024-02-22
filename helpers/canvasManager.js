@@ -15,18 +15,6 @@ function getCanvasSize() {
 }
 
 /**
- * set up the canvas using the window as reference
- */
-function setUpCanvas() {
-  // get canvas size from helpers
-  canvasSize = getCanvasSize(windowWidth, windowHeight);
-  createCanvas(canvasSize, canvasSize);
-
-  // set up background to greyscale 220
-  background(0);
-}
-
-/**
  * Check if we should draw a point at the given radius. We will not draw a point when:
  * - radius is so small that it would overlapp with the beginning of the spiral
  * - colorIndex is out of range (we don't have enough colors)

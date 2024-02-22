@@ -1,25 +1,17 @@
 let randomColor;
 
 function setup() {
-  noStroke();
+  //create canvas of wohle screen
+  createCanvas(windowWidth, windowHeight);
 
-  setUpCanvas();
+  // set up background to greyscale 220
+  background(0);
+
+  //remove stroke
+  noStroke();
 
   //set a random color to be the fill
   randomColor = generateRandomColor();
 }
 
-
-function draw() {
-  //reset canvas
-  // setUpCanvas();
-  background(0);
-
-  //fill drawing with random color
-  fill(randomColor);
-
-  //draw a heart
-  // drawHeart();
-
-  drawSpiral();
-}
+function draw() {}
