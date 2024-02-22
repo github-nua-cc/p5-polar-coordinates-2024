@@ -1,3 +1,5 @@
+const spiralRotationValue = document.getElementById("spiral-rotation-value");
+
 let spiralOffset = 0;
 
 /**
@@ -21,10 +23,9 @@ function drawSpiral() {
 
   spiralOffset = spiralOffset - 1;
 
-  scrollValue.innerHTML = floor(spiralOffset) % 360;
+  //update html info
+  spiralRotationValue.innerHTML = floor(spiralOffset) % 360;
 }
-
-const scrollValue = document.getElementById("scroll-value");
 
 /**
  * add whatever delta offset is detected by the mouseWheel event

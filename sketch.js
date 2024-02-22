@@ -28,8 +28,8 @@ function draw() {
   // drawCircle();
 
   //draw the spiral
-  drawSpiral();
+  // drawSpiral();
 
   //draw the heart
-  // drawHeart();
+  drawHeart();
 }

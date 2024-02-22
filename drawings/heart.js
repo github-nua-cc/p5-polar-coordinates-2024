@@ -1,4 +1,5 @@
 let heartOffset = 0;
+const heartOffsetValue = document.getElementById('heart-offset-value');
 
 /**
  * Get r for the given theta
@@ -46,4 +47,7 @@ function drawHeart() {
     heartOffset = 0;
     background(0);
   }
+
+  //change inner html value
+  heartOffsetValue.innerHTML = floor(heartOffset);
 }
