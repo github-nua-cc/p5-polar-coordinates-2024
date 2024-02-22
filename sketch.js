@@ -25,5 +25,5 @@ function draw() {
   translate(windowWidth / 2, windowHeight / 2);
 
   //draw the circle
-  drawCircle();
+  // drawCircle();
 }
