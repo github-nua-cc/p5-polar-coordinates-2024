@@ -1,4 +1,4 @@
-let offset = 0;
+let spiralOffset = 0;
 
 /**
  * draw one spiral. This is the one that we will use in class.
@@ -13,13 +13,15 @@ function drawSpiral() {
     const radius = 0.3 * theta;
 
     //get html coordinates
-    const htmlCoordinates = polarToCartesian(radius, theta + offset);
+    const htmlCoordinates = polarToCartesian(radius, theta + spiralOffset);
 
     //draw a point at these coordinates
     circle(htmlCoordinates.x, htmlCoordinates.y, 16);
   }
 
-  offset = offset - 1;
+  spiralOffset = spiralOffset - 1;
+
+  scrollValue.innerHTML = floor(spiralOffset) % 360;
 }
 
 const scrollValue = document.getElementById("scroll-value");
@@ -34,9 +36,7 @@ const scrollValue = document.getElementById("scroll-value");
  */
 function mouseWheel(event) {
   // add the value stored in event.delta to the offset
-  offset = offset + event.delta / 10;
-
-  scrollValue.innerHTML = Math.floor(event.delta);
+  spiralOffset = spiralOffset + event.delta / 10;
 
   //return false will block page scrolling
   return false;

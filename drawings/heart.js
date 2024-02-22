@@ -1,5 +1,4 @@
-// const heartScale = 100;
-let heartScale = 0;
+let heartOffset = 0;
 
 /**
  * Get r for the given theta
@@ -31,7 +30,7 @@ function drawHeart() {
   //loop - only one circle
   for (let theta = 0; theta < 360; theta = theta + 0.1) {
     //get radius of this theta
-    const radius = heartScale * radiusForHeart(theta);
+    const radius = heartOffset * radiusForHeart(theta);
 
     //get html coordinates
     const htmlCoordinates = polarToCartesian(radius, theta);
@@ -41,10 +40,10 @@ function drawHeart() {
   }
 
   //update heart scale
-  heartScale = heartScale + 0.5;
+  heartOffset = heartOffset + 0.5;
   //check heart scale has not gone beyond maximum
-  if (heartScale > maximumHeartScale) {
-    heartScale = 0;
+  if (heartOffset > maximumHeartScale) {
+    heartOffset = 0;
     background(0);
   }
 }

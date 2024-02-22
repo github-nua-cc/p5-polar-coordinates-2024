@@ -5,22 +5,16 @@ body {
   padding: 0;
   /* background color */
   background-color: black;
-  /* height */
-  height: 100%;
-  /* alignment */
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
+  /* font */
   font-family: sans-serif;
   font-size: 30px;
 
+  /* remove scroll */
   overflow: hidden;
 }
 canvas {
   display: block;
-  /* give canvas an outline */
-  outline: 10px solid rgb(238, 238, 238);
 }
 
 div {
