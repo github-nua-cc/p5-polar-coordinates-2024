@@ -10,8 +10,20 @@ function setup() {
   //remove stroke
   noStroke();
 
+  //set angle mode to degrees
+  angleMode(DEGREES);
+
   //set a random color to be the fill
   randomColor = generateRandomColor();
+
+  //fill with random color
+  fill(randomColor);
 }
 
-function draw() {}
+function draw() {
+  //translate to middle
+  translate(windowWidth / 2, windowHeight / 2);
+
+  //draw the circle
+  drawCircle();
+}

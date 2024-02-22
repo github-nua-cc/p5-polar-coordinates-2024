@@ -1,21 +1,16 @@
 /**
- * Given a radius and an angle theta, transform this to html cooridnates
+ * Given a radius and an angle theta, transform this to cartesian cooridnates
  * @param {Number} radius in pixels
- * @param {Number} theta in radians
+ * @param {Number} theta in degrees
  * @returns
  */
-function polarToHtml(radius, theta) {
+function polarToCartesian(radius, theta) {
   //get x and y for cartesian
   const cartesianX = radius * cos(theta);
   const cartesianY = radius * sin(theta);
-
-  //get x and y for html
-  const htmlX = canvasSize / 2 + cartesianX;
-  const htmlY = canvasSize / 2 - cartesianY;
-
   //build object from coordinates
-  const htmlCoordinates = { x: htmlX, y: htmlY };
-  return htmlCoordinates;
+  const cartesianCoordinates = { x: cartesianX, y: cartesianY };
+  return cartesianCoordinates;
 }
 
 /**
