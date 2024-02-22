@@ -1,5 +1,3 @@
-let randomColor;
-
 function setup() {
   //create canvas of wohle screen
   createCanvas(windowWidth, windowHeight - 60);
@@ -14,13 +12,14 @@ function setup() {
   angleMode(DEGREES);
 
   //set a random color to be the fill
-  randomColor = generateRandomColor();
+  generateRandomColor();
 
   //fill with random color
   fill(randomColor);
 }
 
 function draw() {
+
   //translate to middle
   translate(width / 2, height / 2);
 

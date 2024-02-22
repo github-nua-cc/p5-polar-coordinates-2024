@@ -1,3 +1,8 @@
+let randomColor;
+const newColorButton = document.getElementById('new-color-button');
+
+newColorButton.onclick = () => {generateRandomColor()};
+
 /**
  * Generate a random color with given alpha
  * @param {Number} alpha from 0 to 255
@@ -13,7 +18,9 @@ function generateRandomColor(alpha = 255) {
   const newColor = color(r, g, b, alpha);
 
   //return new color
-  return newColor;
+  randomColor = newColor;
+
+  fill(randomColor);
 }
 
 /**
@@ -23,7 +30,7 @@ function generateRandomColor(alpha = 255) {
  */
 function drawPointWithRandomColorAndPolarCoordinates(radius, theta) {
   //generate and set fill to a new random color
-  const randomColor = generateRandomColor();
+  generateRandomColor();
   fill(randomColor);
 
   //get html coordinates
@@ -32,3 +39,4 @@ function drawPointWithRandomColorAndPolarCoordinates(radius, theta) {
   //draw the point
   circle(htmlCoordinates.x, htmlCoordinates.y, 50);
 }
+
