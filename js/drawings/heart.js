@@ -19,10 +19,10 @@ function radiusForHeart(theta) {
  */
 function drawHeart() {
   //additional translation to place heart a bit higner
-  translate(0, -height / 6);
+  translate(0, -height / 5);
 
   //background 0, 3
-  background(0, 3);
+  background(0, 2);
 
   //define heart constants
   const heartThickness = 4;
@@ -41,7 +41,7 @@ function drawHeart() {
   }
 
   //update heart scale
-  heartOffset = heartOffset + 0.5;
+  heartOffset = heartOffset + 0.1;
   //check heart scale has not gone beyond maximum
   if (heartOffset > maximumHeartScale) {
     heartOffset = 0;
