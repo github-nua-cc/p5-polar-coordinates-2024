@@ -15,9 +15,9 @@ function drawSpiral() {
 
   //go through all the possible angles with a changing increment and draw a point with changing radius
   let increment = 5;
-  for (let theta = 0; theta < 7 * 360; theta = theta + increment) {
+  for (let theta = 0; theta < 5 * 360; theta = theta + increment) {
     //calclulate a new radius bigger than the one before
-    const radius = 0.3 * theta;
+    const radius = 0.6 * theta;
 
     // calculate noise if needed
     let currentNoise = 0;
