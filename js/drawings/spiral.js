@@ -17,7 +17,7 @@ function drawSpiral() {
   let increment = 5;
   for (let theta = 0; theta < 5 * 360; theta = theta + increment) {
     //calclulate a new radius bigger than the one before
-    const radius = 0.6 * theta;
+    const radius = 0.4 * theta;
 
     // calculate noise if needed
     let currentNoise = 0;
