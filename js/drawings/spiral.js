@@ -38,7 +38,7 @@ function drawSpiral() {
 
     if (theta % 360 === 0) {
       // update increment
-      increment = increment / 2;
+      increment = increment * 0.2;
     }
   }
 
