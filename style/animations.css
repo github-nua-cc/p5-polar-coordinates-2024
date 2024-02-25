@@ -1,0 +1,32 @@
+/* class to appear from the top */
+.appear-from-top {
+  animation: appear-from-top;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+/*  class to disappear to the top */
+.disappear-from-top {
+  animation: disappear-from-top;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+
+@keyframes appear-from-top {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes disappear-from-top {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
