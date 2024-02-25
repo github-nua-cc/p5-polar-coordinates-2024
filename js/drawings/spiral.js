@@ -1,10 +1,18 @@
 const spiralRotationValue = document.getElementById("spiral-rotation-value");
 const toggleNoise = document.getElementById("toggle-noise-button");
+const scrollingMessage = document.getElementById("scrolling-message");
+console.log(scrollingMessage.style.display)
+scrollingMessage.style.display = "none";
 
 let spiralOffset = 0;
 let withNoise = false;
 let deltaIncrement = 0;
 let mouseDown = false;
+let scrolled = false;
+
+setTimeout(() => {
+  if (!scrolled) scrollingMessage.style.display = "";
+}, 5000);
 
 /**
  * draw one spiral. This is the one that we will use in class.
@@ -62,11 +70,17 @@ function drawSpiral() {
  * @returns
  */
 function mouseWheel(event) {
+
+  //remove scrolling message
+  scrolled = true;
+  scrollingMessage.style.display = "none";
+
   // add the value stored in event.delta to the offset
   spiralOffset = spiralOffset + event.delta / 10;
 
   //generate a delta increment
-  if (abs(event.delta / 10) > abs(deltaIncrement)) deltaIncrement = event.delta / 10;
+  if (abs(event.delta / 10) > abs(deltaIncrement))
+    deltaIncrement = event.delta / 10;
 
   //return false will block page scrolling
   return false;
