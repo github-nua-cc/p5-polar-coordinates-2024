@@ -33,13 +33,12 @@
 </head>
 
 <body>
-  <!-- nav container so it's hideable -->
+  <!-- nav container so navbar is hideable -->
   <div id="nav-container">
-
     <!-- title of shape -->
     <div id="shape-title">Scrollable Spiral</div>
 
-    <!-- actual nav bar -->
+    <!-- navigation bar -->
     <nav id="nav-bar">
       <!-- navigation bar items -->
       <ul>
@@ -47,27 +46,32 @@
         <li><a href="circle.html">Circle</a></li>
         <li><a href="heart.html">Heart</a></li>
         <li id="current-page"><a href="spiral.html">Spiral</a></li>
-        <!-- to be continued style -->
+
+        <!-- to be continued special element -->
         <li id="last-navbar-item">And more to come...</li>
       </ul>
-      <!-- hr at bottom -->
       <hr />
     </nav>
   </div>
 
-  <!-- main  -->
+  <!-- main - contains shape hint and shape info as well as canvas placed by p5.js libraries -->
   <main>
+    <!-- shape hint - will appear if user has not scrolled after a while -->
     <div id="scrolling-message-container">
       <div id="scrolling-message">Try Scrolling</div>
     </div>
-    <!-- shape information container and color changing -->
+
+    <!-- shape information container -->
     <div id="shape-info-container">
+      <!-- shows how much spiral has rotated -->
       <div class="shape-info-element">
         Spiral Rotated By: <span id="spiral-rotation-value">0</span> degrees
       </div>
+      <!-- allows user to change spiral color -->
       <div clas="shape-info-element">
         <button id="new-color-button">New Color</button>
       </div>
+      <!-- allows user to add noise to spiral -->
       <div class="shape-info-element">
         <button id="toggle-noise-button">Add Noise</button>
       </div>

@@ -31,14 +31,12 @@
 </head>
 
 <body>
-  <!-- nav container so it's hideable -->
+  <!-- nav container so navbar is hideable -->
   <div id="nav-container">
-
-
     <!-- title of shape -->
     <div id="shape-title">Static Circle</div>
 
-    <!-- actual nav bar -->
+    <!-- navigation bar -->
     <nav id="nav-bar">
       <!-- navigation bar items -->
       <ul>
@@ -46,19 +44,20 @@
         <li id="current-page"><a href="circle.html">Circle</a></li>
         <li><a href="heart.html">Heart</a></li>
         <li><a href="spiral.html">Spiral</a></li>
-        <!-- to be continued style -->
+
+        <!-- to be continued special element -->
         <li id="last-navbar-item">And more to come...</li>
       </ul>
-      <!-- hr at bottom -->
       <hr />
     </nav>
 
   </div>
 
-  <!--  -->
+  <!-- main - contains shape hint and shape info as well as canvas placed by p5.js libraries -->
   <main>
-    <!-- shape information container and color changing -->
+    <!-- shape information container -->
     <div id="shape-info-container">
+      <!-- allows user to change circle color -->
       <div class="shape-info-element">
         <button id="new-color-button">New Color</button>
       </div>

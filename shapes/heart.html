@@ -31,12 +31,12 @@
 </head>
 
 <body>
-  <!-- nav container so it's hideable -->
+  <!-- nav container so navbar is hideable -->
   <div id="nav-container">
     <!-- title of shape -->
     <div id="shape-title">Growing Heart</div>
 
-    <!-- actual nav bar -->
+    <!-- navigation bar -->
     <nav id="nav-bar">
       <!-- navigation bar items -->
       <ul>
@@ -44,21 +44,24 @@
         <li><a href="circle.html">Circle</a></li>
         <li id="current-page"><a href="heart.html">Heart</a></li>
         <li><a href="spiral.html">Spiral</a></li>
-        <!-- to be continued style -->
+
+        <!-- to be continued as special element -->
         <li id="last-navbar-item">And more to come...</li>
       </ul>
-      <!-- hr at bottom -->
       <hr />
     </nav>
   </div>
 
-  <!-- main -->
+  <!-- main - contains shape info as well as canvas placed by p5.js libraries -->
   <main>
-    <!-- shape information container and color changing -->
+    <!-- shape information container -->
     <div id="shape-info-container">
+      <!-- shows how much heart has grown -->
       <div class="shape-info-element">
         Heart Offsetted By: <span id="heart-offset-value">0</span> pixels
       </div>
+
+      <!-- allows user to change heart color -->
       <div class="shape-info-element">
         <button id="new-color-button">New Color</button>
       </div>
