@@ -1,6 +1,6 @@
 const spiralRotationValue = document.getElementById("spiral-rotation-value");
 const toggleNoise = document.getElementById("toggle-noise-button");
-const scrollingMessage = document.getElementById("scrolling-message");
+const scrollingMessage = document.getElementById("hint-container");
 
 let spiralOffset = 0;
 let withNoise = false;
