@@ -1,17 +1,19 @@
 const spiralRotationValue = document.getElementById("spiral-rotation-value");
 const toggleNoise = document.getElementById("toggle-noise-button");
 const scrollingMessage = document.getElementById("scrolling-message");
-console.log(scrollingMessage.style.display)
-scrollingMessage.style.display = "none";
 
 let spiralOffset = 0;
 let withNoise = false;
 let deltaIncrement = 0;
 let mouseDown = false;
 let scrolled = false;
+let messageDisplayed = false;
 
 setTimeout(() => {
-  if (!scrolled) scrollingMessage.style.display = "";
+  if (!scrolled) {
+    scrollingMessage.classList.add("appear");
+    messageDisplayed = true;
+  }
 }, 5000);
 
 /**
@@ -70,10 +72,9 @@ function drawSpiral() {
  * @returns
  */
 function mouseWheel(event) {
-
   //remove scrolling message
   scrolled = true;
-  scrollingMessage.style.display = "none";
+  if (messageDisplayed) scrollingMessage.classList.add("disappear");
 
   // add the value stored in event.delta to the offset
   spiralOffset = spiralOffset + event.delta / 10;

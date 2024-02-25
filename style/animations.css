@@ -12,6 +12,20 @@
   animation-fill-mode: forwards;
 }
 
+/* class to make element slowly appear */
+.appear {
+  animation: appear;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+/* class to make element slowly disappear */
+.disappear {
+  animation: disappear;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
 
 @keyframes appear-from-top {
   from {
@@ -30,3 +44,22 @@
     transform: translateY(-100%);
   }
 }
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes disappear {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
