@@ -1,41 +1,52 @@
 <html>
-  <head>
-    <link rel="stylesheet" href="style/shared.css" />
-    <link rel="stylesheet" href="style/animations.css" />
-    <link rel="stylesheet" href="style/navbar.css" />
-    <link rel="stylesheet" href="style/index.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-    />
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico?v=2">
-    <script src="./js/shared.js" defer></script>
-    <title>Polar Coordinates</title>
-  </head>
-  <body>
-    <!-- nav container so it's hideable -->
-    <div id="nav-container">
-      <!-- actual nav bar -->
-      <nav id="nav-bar">
-        <!-- navigation bar items -->
-        <ul>
-          <li id="current-page"><a href="index.html">Home</a></li>
-          <li><a href="shapes/circle.html">Circle</a></li>
-          <li><a href="shapes/heart.html">Heart</a></li>
-          <li><a href="shapes/spiral.html">Spiral</a></li>
 
-          <!-- to be continued style -->
-          <li id="last-navbar-item">And more to come...</li>
-        </ul>
-        <!-- hr at bottom -->
-        <hr />
-      </nav>
-    </div>
+<head>
+  <!-- page icon -->
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico?v=2">
 
-    <!-- main -->
-    <main>
-      <span id="material-symbols-outlined" class="material-symbols-outlined"> arrow_upward </span>
-      Hover at top to open navigation bar
-    </main>
-  </body>
+  <!-- ========== CSS ========== -->
+  <!-- body, html, *, fonts... -->
+  <link rel="stylesheet" href="style/base.css" />
+  <!-- navbar style -->
+  <link rel="stylesheet" href="style/navbar.css" />
+  <!-- animations that are toggled through js -->
+  <link rel="stylesheet" href="style/animations.css" />
+  <!-- index specific style -->
+  <link rel="stylesheet" href="style/index.css" />
+  <!-- material icon arrow up -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+  <!-- ========== JS ========== -->
+  <!-- all pages shared JavaScript -->
+  <script src="./js/shared.js" defer></script>
+
+  <title>Polar Coordinates</title>
+</head>
+
+<body>
+  <!-- nav container so it's hideable -->
+  <div id="nav-container">
+    <nav id="nav-bar">
+      <!-- navigation bar items -->
+      <ul>
+        <li id="current-page"><a href="index.html">Home</a></li>
+        <li><a href="shapes/circle.html">Circle</a></li>
+        <li><a href="shapes/heart.html">Heart</a></li>
+        <li><a href="shapes/spiral.html">Spiral</a></li>
+
+        <!-- to be continued as special element -->
+        <li id="last-navbar-item">And more to come...</li>
+      </ul>
+      <hr />
+    </nav>
+  </div>
+
+  <!-- main - in this case it only contains the initial instructions -->
+  <main>
+    <span id="material-symbols-outlined" class="material-symbols-outlined"> arrow_upward </span>
+    Hover at top to open navigation bar
+  </main>
+</body>
+
 </html>
