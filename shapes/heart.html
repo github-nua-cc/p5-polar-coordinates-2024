@@ -1,54 +1,58 @@
 <html>
-  <head>
-    <!-- p5js -->
-    <script src="../js/p5/p5.min.js"></script>
-    <!-- helper functions -->
-    <script src="../js/helpers/coordinateTransformer.js"></script>
-    <script src="../js/helpers/canvasManager.js" defer></script>
-    <!-- heart drawing -->
-    <script src="../js/drawings/heart.js" defer></script>
-    <!-- sketch -->
-    <script src="../js/sketch.js" defer></script>
-    <!-- css -->
-    <link rel="stylesheet" href="../style/shared.css" />
-    <link rel="stylesheet" href="../style/navbar.css" />
-    <link rel="stylesheet" href="../style/shapes.css" />
-    <link rel="icon" type="image/x-icon" href="../images/favicon.ico?v=2">
-    <title>Growing Heart</title>
-  </head>
-  <body>
-    <!-- nav container so it's hideable -->
-    <div id="nav-container">
-      <!-- actual nav bar -->
-      <nav id="nav-bar">
-        <!-- navigation bar items -->
-        <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="circle.html">Circle</a></li>
-          <li id="current-page"><a href="heart.html">Heart</a></li>
-          <li><a href="spiral.html">Spiral</a></li>
-          <!-- to be continued style -->
-          <li id="last-navbar-item">And more to come...</li>
-        </ul>
-        <!-- hr at bottom -->
-        <hr />
-      </nav>
 
-      <!-- title of shape -->
-      <div id="shape-title">Growing Heart</div>
-    </div>
+<head>
+  <!-- p5js -->
+  <script src="../js/p5/p5.min.js"></script>
+  <!-- helper functions -->
+  <script src="../js/helpers/coordinateTransformer.js"></script>
+  <script src="../js/helpers/canvasManager.js" defer></script>
+  <!-- heart drawing -->
+  <script src="../js/drawings/heart.js" defer></script>
+  <!-- sketch -->
+  <script src="../js/sketch.js" defer></script>
+  <script src="../js/shared.js" defer></script>
+  <!-- css -->
+  <link rel="stylesheet" href="../style/shared.css" />
+  <link rel="stylesheet" href="../style/navbar.css" />
+  <link rel="stylesheet" href="../style/shapes.css" />
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico?v=2">
+  <title>Growing Heart</title>
+</head>
 
-    <!-- main -->
-    <main>
-      <!-- shape information container and color changing -->
-      <div id="shape-info-container">
-        <div class="shape-info-element">
-          Heart Offsetted By: <span id="heart-offset-value">0</span> pixels
-        </div>
-        <div class="shape-info-element">
-          <button id="new-color-button">New Color</button>
-        </div>
+<body>
+  <!-- nav container so it's hideable -->
+  <div id="nav-container">
+    <!-- title of shape -->
+    <div id="shape-title">Growing Heart</div>
+
+    <!-- actual nav bar -->
+    <nav id="nav-bar">
+      <!-- navigation bar items -->
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="circle.html">Circle</a></li>
+        <li id="current-page"><a href="heart.html">Heart</a></li>
+        <li><a href="spiral.html">Spiral</a></li>
+        <!-- to be continued style -->
+        <li id="last-navbar-item">And more to come...</li>
+      </ul>
+      <!-- hr at bottom -->
+      <hr />
+    </nav>
+  </div>
+
+  <!-- main -->
+  <main>
+    <!-- shape information container and color changing -->
+    <div id="shape-info-container">
+      <div class="shape-info-element">
+        Heart Offsetted By: <span id="heart-offset-value">0</span> pixels
       </div>
-    </main>
-  </body>
+      <div class="shape-info-element">
+        <button id="new-color-button">New Color</button>
+      </div>
+    </div>
+  </main>
+</body>
+
 </html>

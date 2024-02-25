@@ -8,12 +8,18 @@
 /* navigation bar is hidden by default */
 #nav-bar {
   height: 100%;
-  opacity: 0;
+  /* opacity: 0; */
+  transform: translateY(-100px);
+
+
+  background-color: black;
+  
+  z-index: 1;
 }
 
 /* class toggled by js */
-.navbar-disappear {
-  animation: navbar-disappear;
+.disappear {
+  animation: disappear;
   animation-duration: 1s;
   animation-fill-mode: forwards;
 }
@@ -23,8 +29,8 @@ nav {
 }
 
 /* upon nav-container hover, show havigation bar */
-#nav-container:hover #nav-bar {
-  animation: navbar-appear;
+.appear {
+  animation: appear;
   animation-duration: 1s;
   animation-fill-mode: forwards;
 }
@@ -100,6 +106,7 @@ a {
 #shape-title {
   /* set at top */
   position: absolute;
+  z-index: 0;
   top: 0px;
 
   /* same size as nav bar */
@@ -119,25 +126,30 @@ a {
 }
 
 /* upon nav-container hover, show havigation bar */
-#nav-container:hover #shape-title {
+/* #nav-container:hover #shape-title {
   transform: translateY(-100px);
-}
+} */
 
-@keyframes navbar-appear {
+@keyframes appear {
   from {
-    opacity: 0;
+    /* opacity: 0; */
+    transform: translateY(-100px);
   }
   to {
-    opacity: 1;
+    /* opacity: 1; */
+    transform: translateY(0px);
+
   }
 }
 
 
-@keyframes navbar-disappear {
+@keyframes disappear {
   from {
-    opacity: 1;
+    /* opacity: 1; */
+    transform: translateY(0px);
   }
   to {
-    opacity: 0;
+    /* opacity: 0; */
+    transform: translateY(-100px);
   }
 }

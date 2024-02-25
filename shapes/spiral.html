@@ -1,62 +1,66 @@
 <html>
-  <head>
-    <!-- p5js -->
-    <script src="../js/p5/p5.min.js"></script>
-    <!-- helper functions -->
-    <script src="../js/helpers/coordinateTransformer.js"></script>
-    <script src="../js/helpers/canvasManager.js" defer></script>
-    <!-- spiral drawing -->
-    <script src="../js/drawings/spiral.js" defer></script>
-    <!-- sketch -->
-    <script src="../js/sketch.js" defer></script>
-    <script src="../js/shared.js" defer></script>
-    <!-- css -->
-    <link rel="stylesheet" href="../style/shared.css" />
-    <link rel="stylesheet" href="../style/navbar.css" />
-    <link rel="stylesheet" href="../style/shapes.css" />
-    <link rel="stylesheet" href="../style/spiral.css" />
-    <link rel="icon" type="image/x-icon" href="../images/favicon.ico?v=2">
-    <title>Scrollable Spiral</title>
-  </head>
-  <body>
-    <!-- nav container so it's hideable -->
-    <div id="nav-container">
-      <!-- actual nav bar -->
-      <nav id="nav-bar">
-        <!-- navigation bar items -->
-        <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="circle.html">Circle</a></li>
-          <li><a href="heart.html">Heart</a></li>
-          <li id="current-page"><a href="spiral.html">Spiral</a></li>
-          <!-- to be continued style -->
-          <li id="last-navbar-item">And more to come...</li>
-        </ul>
-        <!-- hr at bottom -->
-        <hr />
-      </nav>
 
-      <!-- title of shape -->
-      <div id="shape-title">Scrollable Spiral</div>
-    </div>
+<head>
+  <!-- p5js -->
+  <script src="../js/p5/p5.min.js"></script>
+  <!-- helper functions -->
+  <script src="../js/helpers/coordinateTransformer.js"></script>
+  <script src="../js/helpers/canvasManager.js" defer></script>
+  <!-- spiral drawing -->
+  <script src="../js/drawings/spiral.js" defer></script>
+  <!-- sketch -->
+  <script src="../js/sketch.js" defer></script>
+  <script src="../js/shared.js" defer></script>
+  <!-- css -->
+  <link rel="stylesheet" href="../style/shared.css" />
+  <link rel="stylesheet" href="../style/navbar.css" />
+  <link rel="stylesheet" href="../style/shapes.css" />
+  <link rel="stylesheet" href="../style/spiral.css" />
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico?v=2">
+  <title>Scrollable Spiral</title>
+</head>
 
-    <!-- main  -->
-    <main>
-      <!-- shape information container and color changing -->
-      <div id="shape-info-container">
-        <div class="shape-info-element">
-          Spiral Rotated By: <span id="spiral-rotation-value">0</span> degrees
-        </div>
-        <div clas="shape-info-element">
-          <button id="new-color-button">New Color</button>
-        </div>
-        <div class="shape-info-element">
-          <button id="toggle-noise-button">Add Noise</button>
-        </div>
+<body>
+  <!-- nav container so it's hideable -->
+  <div id="nav-container">
+
+    <!-- title of shape -->
+    <div id="shape-title">Scrollable Spiral</div>
+
+    <!-- actual nav bar -->
+    <nav id="nav-bar">
+      <!-- navigation bar items -->
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="circle.html">Circle</a></li>
+        <li><a href="heart.html">Heart</a></li>
+        <li id="current-page"><a href="spiral.html">Spiral</a></li>
+        <!-- to be continued style -->
+        <li id="last-navbar-item">And more to come...</li>
+      </ul>
+      <!-- hr at bottom -->
+      <hr />
+    </nav>
+  </div>
+
+  <!-- main  -->
+  <main>
+    <!-- shape information container and color changing -->
+    <div id="shape-info-container">
+      <div class="shape-info-element">
+        Spiral Rotated By: <span id="spiral-rotation-value">0</span> degrees
       </div>
-      <div id="scrolling-message-container">
+      <div clas="shape-info-element">
+        <button id="new-color-button">New Color</button>
+      </div>
+      <div class="shape-info-element">
+        <button id="toggle-noise-button">Add Noise</button>
+      </div>
+    </div>
+    <div id="scrolling-message-container">
       <div id="scrolling-message">Try Scrolling</div>
     </div>
-    </main>
-  </body>
+  </main>
+</body>
+
 </html>
