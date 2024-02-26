@@ -19,3 +19,8 @@ body {
   /* remove scroll */
   overflow: hidden;
 }
+
+/* small text */
+.s-text {
+  font-size: 15px;
+}
