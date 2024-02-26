@@ -8,9 +8,9 @@ function drawRose() {
   for (let theta = 0; theta < 360; theta += 0.5) {
     const radius = 200 * sin(n * theta);
 
-    const htmlCoordinates = polarToCartesian(radius, theta);
+    const cartesianCoordinates = polarToCartesian(radius, theta);
 
-    circle(htmlCoordinates.x, htmlCoordinates.y, 8);
+    circle(cartesianCoordinates.x, cartesianCoordinates.y, 8);
   }
 
   //draw lines in white
