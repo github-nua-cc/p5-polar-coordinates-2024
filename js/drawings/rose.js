@@ -91,16 +91,6 @@ function drawRose() {
 
   updateWalkerArray();
 
-  //draw lines in white
-  stroke(color(255, 255, 255));
-
-  beginShape(LINES);
-  for (point of walkerCoordinatesArray) {
-    vertex(point.x, point.y);
-  }
-  endShape();
-
-
   //reset background and stroke
   noStroke();
 
@@ -112,4 +102,13 @@ function drawRose() {
 
     circle(cartesianCoordinates.x, cartesianCoordinates.y, 8);
   }
+
+  //draw lines in white
+  stroke(color(255, 255, 255));
+
+  beginShape(LINES);
+  for (point of walkerCoordinatesArray) {
+    vertex(point.x, point.y);
+  }
+  endShape();
 }
