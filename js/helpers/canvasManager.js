@@ -1,4 +1,6 @@
 let randomColor;
+//store if color has recently changed
+let colorHasChanged = false;
 const newColorButton = document.getElementById("new-color-button");
 
 if (newColorButton)
@@ -24,6 +26,8 @@ function generateRandomColor(alpha = 255) {
   randomColor = newColor;
 
   fill(randomColor);
+
+  colorHasChanged = true;
 }
 
 /**

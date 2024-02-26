@@ -1,16 +1,59 @@
 // The rose has n petals if n is odd, and 2n petals if n is even.
-const n = 4;
+let n = 4;
+let newN = n;
+
 // d is a positive integer and the angles are in degrees - degree at which 'the walker turns'
 let d = 29;
+let newD = d;
+
+//store if first iteration
+let first = true;
+
+function mustDraw() {
+  //first iteration must draw
+  if(first) {
+    first = false;
+    return true;
+  }
+
+  //n has changed must draw
+  if(n != newN) {
+    n = newN;
+    return true;
+  }
+
+  //d has changed must draw
+  if(d != newD) {
+    d = newD;
+    return true;
+  }
+
+  //if color changes must redraw
+  if(colorHasChanged) {
+    return true;
+  }
+
+  return false;
+}
+
+const dValueElement = document.getElementById("rose-d-value");
+dValueElement.value = d;
+
+dValueElement.onchange = (event) => {
+  newD = event.target.value;
+};
+
+const nValueElement = document.getElementById("rose-n-value");
+nValueElement.value = n;
+
+nValueElement.onchange = (event) => {
+  newN = event.target.value;
+};
 
 //walkerArray
 let walkerCoordinatesArray = [];
 
-function updateWalkerArray(newD) {
-  if (d === newD && walkerCoordinatesArray.length != 0) {
-    return false;
-  }
-
+function updateWalkerArray() {
   d = newD;
 
   walkerCoordinatesArray = [];
@@ -24,16 +67,17 @@ function updateWalkerArray(newD) {
       y: cartesianCoordinates.y,
     });
   }
-
-  return true;
 }
 
 function drawRose() {
   //reset background and stroke
   noStroke();
 
-  //only redraw if d has been updated
-  if (!updateWalkerArray(d)) return;
+  if(!mustDraw()) return;
+
+  background(0);
+
+  updateWalkerArray();
 
   //draw rose
   for (let theta = 0; theta < 360; theta += 0.01) {
