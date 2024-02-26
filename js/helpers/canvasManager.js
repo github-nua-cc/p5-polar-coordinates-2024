@@ -1,7 +1,10 @@
 let randomColor;
-const newColorButton = document.getElementById('new-color-button');
+const newColorButton = document.getElementById("new-color-button");
 
-newColorButton.onclick = () => {generateRandomColor()};
+if (newColorButton)
+  newColorButton.onclick = () => {
+    generateRandomColor();
+  };
 
 /**
  * Generate a random color with given alpha
@@ -39,4 +42,3 @@ function drawPointWithRandomColorAndPolarCoordinates(radius, theta) {
   //draw the point
   circle(htmlCoordinates.x, htmlCoordinates.y, 50);
 }
-

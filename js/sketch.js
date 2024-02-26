@@ -40,5 +40,9 @@ function draw() {
       drawHeart();
       break;
     }
+    case "rose.html": {
+      drawRose();
+      break;
+    }
   }
 }

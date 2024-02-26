@@ -1,0 +1,65 @@
+<html>
+
+<head>
+  <!-- page icon -->
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico?v=2">
+
+  <!-- ========== CSS ========== -->
+  <!-- body, html, *, fonts... -->
+  <link rel="stylesheet" href="../style/base.css" />
+  <!-- navbar style -->
+  <link rel="stylesheet" href="../style/navbar.css" />
+  <!-- animations that are toggled through js -->
+  <link rel="stylesheet" href="../style/animations.css" />
+  <!-- style that's only used in shape page -->
+  <link rel="stylesheet" href="../style/shapes.css" />
+
+  <!-- ========== JS ========== -->
+  <!-- all pages shared JavaScript -->
+  <script src="../js/shared.js" defer></script>
+  <!-- p5js -->
+  <script src="../js/p5/p5.min.js"></script>
+  <!-- helper functions -->
+  <script src="../js/helpers/coordinateTransformer.js"></script>
+  <script src="../js/helpers/canvasManager.js" defer></script>
+  <!-- rose drawing -->
+  <script src="../js/drawings/rose.js" defer></script>
+  <!-- sketch -->
+  <script src="../js/sketch.js" defer></script>
+
+  <title>Static Circle</title>
+</head>
+
+<body>
+  <!-- nav container so navbar is hideable -->
+  <div id="nav-container">
+    <!-- title of shape -->
+    <div id="shape-title">Maurer Rose</div>
+
+    <!-- navigation bar -->
+    <nav id="nav-bar">
+      <!-- navigation bar items -->
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="circle.html">Circle</a></li>
+        <li><a href="heart.html">Heart</a></li>
+        <li><a href="spiral.html">Spiral</a></li>
+        <li id="current-page"><a href="maurer.html">Maurer Rose</a></li>
+
+        <!-- to be continued special element -->
+        <li id="last-navbar-item">And more to come...</li>
+      </ul>
+      <hr />
+    </nav>
+
+  </div>
+
+  <!-- main - contains shape hint and shape info as well as canvas placed by p5.js libraries -->
+  <main>
+    <!-- shape information container -->
+    <div id="shape-info-container">
+    </div>
+  </main>
+</body>
+
+</html>
