@@ -4,20 +4,25 @@ const n = 4;
 let d = 29;
 
 //walkerArray
-let walkerArray = [];
+let walkerCoordinatesArray = [];
 
 function updateWalkerArray(newD) {
-  if (d === newD && walkerArray.length != 0) {
+  if (d === newD && walkerCoordinatesArray.length != 0) {
     return false;
   }
 
   d = newD;
 
-  walkerArray = [];
+  walkerCoordinatesArray = [];
 
   for (let index = 0; index < 361; index++) {
     const angle = (index * d) % 360;
-    walkerArray.push({ radius: 200 * sin(n * angle), theta: angle });
+    const radius = 200 * sin(n * angle);
+    const cartesianCoordinates = polarToCartesian(radius, angle);
+    walkerCoordinatesArray.push({
+      x: cartesianCoordinates.x,
+      y: cartesianCoordinates.y,
+    });
   }
 
   return true;
@@ -25,8 +30,10 @@ function updateWalkerArray(newD) {
 
 function drawRose() {
   //reset background and stroke
-  background(0);
   noStroke();
+
+  //only redraw if d has been updated
+  if (!updateWalkerArray(d)) return;
 
   //draw rose
   for (let theta = 0; theta < 360; theta += 0.01) {
@@ -40,13 +47,9 @@ function drawRose() {
   //draw lines in white
   stroke(color(255, 255, 255));
 
-  updateWalkerArray(d);
-
   beginShape(LINES);
-  for (point of walkerArray) {
-    const cartesianPoint = polarToCartesian(point.radius, point.theta);
-
-    vertex(cartesianPoint.x, cartesianPoint.y);
+  for (point of walkerCoordinatesArray) {
+    vertex(point.x, point.y);
   }
   endShape();
 }
