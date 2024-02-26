@@ -1,11 +1,11 @@
-const n = 3;
-const d = 5;
+const n = 2;
+const d = 29;
 
 function drawRose() {
   noLoop();
 
   //draw rose
-  for (let theta = 0; theta < 360; theta += 0.5) {
+  for (let theta = 0; theta < 360; theta += 0.01) {
     const radius = 200 * sin(n * theta);
 
     const cartesianCoordinates = polarToCartesian(radius, theta);
@@ -14,28 +14,33 @@ function drawRose() {
   }
 
   //draw lines in white
-  fill(color(255, 255, 255));
-  let finished = false;
+  stroke(color(255, 255, 255));
+  // strokeWeight(10);
   let index = 1;
-  let walkerPosition = { x: 0, y: 0 };
-  let nextWalkerPosition = { x: sin(n * d), y: d };
+  let walkerPosition = { radius: 0, theta: 0 };
+  let nextWalkerPosition = { radius: sin(n * d), theta: index * d };
 
-  while (!finished) {
+  while (index < 359) {
+    console.log("x: " + nextWalkerPosition.x + ", y: " + nextWalkerPosition.y);
 
-    console.log(nextWalkerPosition.x, nextWalkerPosition.y)
+    const cartesianCoordinates = polarToCartesian(
+      200 * walkerPosition.radius,
+      walkerPosition.theta
+    );
+    const cartesianCoordinatesNext = polarToCartesian(
+      200 * nextWalkerPosition.radius,
+      nextWalkerPosition.theta
+    );
 
     line(
-      walkerPosition.x * 200,
-      walkerPosition.y * 200,
-      nextWalkerPosition.x * 200,
-      nextWalkerPosition.y * 200
+      cartesianCoordinates.x,
+      cartesianCoordinates.y,
+      cartesianCoordinatesNext.x,
+      cartesianCoordinatesNext.y
     );
 
     index++;
     walkerPosition = nextWalkerPosition;
-    nextWalkerPosition = { x: sin(index * n * d), y: d };
-
-    if ((nextWalkerPosition.x === 0 && nextWalkerPosition.y === 0) || index === 100)
-      finished = true;
+    nextWalkerPosition = { radius: sin(index * n * d), theta: index * d };
   }
 }
