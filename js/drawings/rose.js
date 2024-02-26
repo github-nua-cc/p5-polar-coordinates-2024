@@ -1,8 +1,32 @@
-const n = 2;
-const d = 29;
+// The rose has n petals if n is odd, and 2n petals if n is even.
+const n = 4;
+// d is a positive integer and the angles are in degrees - degree at which 'the walker turns'
+let d = 29;
+
+//walkerArray
+let walkerArray = [];
+
+function updateWalkerArray(newD) {
+  if (d === newD && walkerArray.length != 0) {
+    return false;
+  }
+
+  d = newD;
+
+  walkerArray = [];
+
+  for (let index = 0; index < 361; index++) {
+    const angle = (index * d) % 360;
+    walkerArray.push({ radius: 200 * sin(n * angle), theta: angle });
+  }
+
+  return true;
+}
 
 function drawRose() {
-  noLoop();
+  //reset background and stroke
+  background(0);
+  noStroke();
 
   //draw rose
   for (let theta = 0; theta < 360; theta += 0.01) {
@@ -15,32 +39,14 @@ function drawRose() {
 
   //draw lines in white
   stroke(color(255, 255, 255));
-  // strokeWeight(10);
-  let index = 1;
-  let walkerPosition = { radius: 0, theta: 0 };
-  let nextWalkerPosition = { radius: sin(n * d), theta: index * d };
 
-  while (index < 361) {
-    console.log("x: " + nextWalkerPosition.x + ", y: " + nextWalkerPosition.y);
+  updateWalkerArray(d);
 
-    const cartesianCoordinates = polarToCartesian(
-      200 * walkerPosition.radius,
-      walkerPosition.theta
-    );
-    const cartesianCoordinatesNext = polarToCartesian(
-      200 * nextWalkerPosition.radius,
-      nextWalkerPosition.theta
-    );
+  beginShape(LINES);
+  for (point of walkerArray) {
+    const cartesianPoint = polarToCartesian(point.radius, point.theta);
 
-    line(
-      cartesianCoordinates.x,
-      cartesianCoordinates.y,
-      cartesianCoordinatesNext.x,
-      cartesianCoordinatesNext.y
-    );
-
-    index++;
-    walkerPosition = nextWalkerPosition;
-    nextWalkerPosition = { radius: sin(index * n * d), theta: index * d };
+    vertex(cartesianPoint.x, cartesianPoint.y);
   }
+  endShape();
 }
