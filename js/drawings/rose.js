@@ -70,23 +70,12 @@ function updateWalkerArray() {
 }
 
 function drawRose() {
-  //reset background and stroke
-  noStroke();
 
   if(!mustDraw()) return;
 
   background(0);
 
   updateWalkerArray();
-
-  //draw rose
-  for (let theta = 0; theta < 360; theta += 0.01) {
-    const radius = 200 * sin(n * theta);
-
-    const cartesianCoordinates = polarToCartesian(radius, theta);
-
-    circle(cartesianCoordinates.x, cartesianCoordinates.y, 8);
-  }
 
   //draw lines in white
   stroke(color(255, 255, 255));
@@ -96,4 +85,17 @@ function drawRose() {
     vertex(point.x, point.y);
   }
   endShape();
+
+
+  //reset background and stroke
+  noStroke();
+
+  //draw rose
+  for (let theta = 0; theta < 360; theta += 0.01) {
+    const radius = 200 * sin(n * theta);
+
+    const cartesianCoordinates = polarToCartesian(radius, theta);
+
+    circle(cartesianCoordinates.x, cartesianCoordinates.y, 8);
+  }
 }
