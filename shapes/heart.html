@@ -1,73 +1,89 @@
 <html>
+  <head>
+    <!-- page icon -->
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico?v=2" />
 
-<head>
-  <!-- page icon -->
-  <link rel="icon" type="image/x-icon" href="../images/favicon.ico?v=2">
+    <!-- ========== CSS ========== -->
+    <!-- body, html, *, fonts... -->
+    <link rel="stylesheet" href="../style/base.css" />
+    <!-- navbar style -->
+    <link rel="stylesheet" href="../style/navbar.css" />
+    <!-- animations that are toggled through js -->
+    <link rel="stylesheet" href="../style/animations.css" />
+    <!-- style that's only used in shape page -->
+    <link rel="stylesheet" href="../style/shapes.css" />
 
-  <!-- ========== CSS ========== -->
-  <!-- body, html, *, fonts... -->
-  <link rel="stylesheet" href="../style/base.css" />
-  <!-- navbar style -->
-  <link rel="stylesheet" href="../style/navbar.css" />
-  <!-- animations that are toggled through js -->
-  <link rel="stylesheet" href="../style/animations.css" />
-  <!-- style that's only used in shape page -->
-  <link rel="stylesheet" href="../style/shapes.css" />
+    <!-- ========== JS ========== -->
+    <!-- all pages shared JavaScript -->
+    <script src="../js/shared.js" defer></script>
+    <!-- p5js -->
+    <script src="../js/p5/p5.min.js"></script>
+    <!-- helper functions -->
+    <script src="../js/helpers/coordinateTransformer.js"></script>
+    <script src="../js/helpers/canvasManager.js" defer></script>
+    <!-- heart drawing -->
+    <script src="../js/drawings/heart.js" defer></script>
+    <!-- sketch -->
+    <script src="../js/sketch.js" defer></script>
 
-  <!-- ========== JS ========== -->
-  <!-- all pages shared JavaScript -->
-  <script src="../js/shared.js" defer></script>
-  <!-- p5js -->
-  <script src="../js/p5/p5.min.js"></script>
-  <!-- helper functions -->
-  <script src="../js/helpers/coordinateTransformer.js"></script>
-  <script src="../js/helpers/canvasManager.js" defer></script>
-  <!-- heart drawing -->
-  <script src="../js/drawings/heart.js" defer></script>
-  <!-- sketch -->
-  <script src="../js/sketch.js" defer></script>
+    <title>Growing Heart</title>
+  </head>
 
-  <title>Growing Heart</title>
-</head>
+  <body>
+    <!-- nav container so navbar is hideable -->
+    <div id="nav-container">
+      <!-- title of shape -->
+      <div id="shape-title">Growing Heart</div>
 
-<body>
-  <!-- nav container so navbar is hideable -->
-  <div id="nav-container">
-    <!-- title of shape -->
-    <div id="shape-title">Growing Heart</div>
+      <!-- navigation bar -->
+      <nav id="nav-bar">
+        <!-- navigation bar items -->
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="circle.html">Circle</a></li>
+          <li id="current-page"><a href="heart.html">Heart</a></li>
+          <li><a href="spiral.html">Spiral</a></li>
+          <li><a href="rose.html">Maurer Rose</a></li>
 
-    <!-- navigation bar -->
-    <nav id="nav-bar">
-      <!-- navigation bar items -->
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="circle.html">Circle</a></li>
-        <li id="current-page"><a href="heart.html">Heart</a></li>
-        <li><a href="spiral.html">Spiral</a></li>
-        <li><a href="rose.html">Maurer Rose</a></li>
-
-        <!-- to be continued as special element -->
-        <li id="last-navbar-item">And more to come...</li>
-      </ul>
-      <hr />
-    </nav>
-  </div>
-
-  <!-- main - contains shape info as well as canvas placed by p5.js libraries -->
-  <main>
-    <!-- shape information container -->
-    <div id="shape-info-container">
-      <!-- shows how much heart has grown -->
-      <div class="shape-info-element">
-        Heart Offsetted By: <span id="heart-offset-value">0</span> pixels
-      </div>
-
-      <!-- allows user to change heart color -->
-      <div class="shape-info-element">
-        <button id="new-color-button">New Color</button>
-      </div>
+          <!-- to be continued as special element -->
+          <li id="last-navbar-item">And more to come...</li>
+        </ul>
+        <hr />
+      </nav>
     </div>
-  </main>
-</body>
 
+    <!-- main - contains shape info as well as canvas placed by p5.js libraries -->
+    <main>
+      <!-- shape information container -->
+      <div id="shape-info-container">
+        <!-- shows how much heart has grown -->
+
+        <!-- formula of shape -->
+        <div class="shape-info-element">
+          Formula:
+          <div class="s-text">
+            r = 2 - 2 * sin( &#952;) + sin( &#952;) * sqrt(abs(cos( &#952;))) /
+            (sin( &#952;) + 1.4);
+          </div>
+        </div>
+
+        <div class="shape-info-element">
+          Heart Offsetted By: <span id="heart-offset-value">0</span> pixels
+        </div>
+
+        <!-- allows user to change heart color -->
+        <div class="shape-info-element">
+          <button id="new-color-button">New Color</button>
+        </div>
+
+
+        <div class="shape-info-container s-text">
+          More fun heart formulas can be found in
+          <a class="link" target="_blank" href="https://mathworld.wolfram.com/HeartCurve.html"
+            >Wolfram Alpha</a
+          >
+        </div>
+      </div>
+    </main>
+  </body>
 </html>

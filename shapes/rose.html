@@ -56,6 +56,17 @@
     <main>
       <!-- shape information container -->
       <div id="shape-info-container">
+        <!-- formula of shape -->
+        <div class="shape-info-element">
+          Outline Formula: <span class="s-text"> r = sin(nθ)</span>
+        </div>
+        <div class="shape-info-element">
+          Points of lines located at:
+          <div class="s-text">
+            (sin(index * n * d), index * d) <br />
+            with index &isin; (0...360)
+          </div>
+        </div>
         <!-- allows user to change circle color -->
         <div class="shape-info-element">
           <button id="new-color-button">New Outline Color</button>

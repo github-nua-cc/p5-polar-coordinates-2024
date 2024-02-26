@@ -1,83 +1,89 @@
 <html>
+  <head>
+    <!-- page icon -->
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico?v=2" />
 
-<head>
-  <!-- page icon -->
-  <link rel="icon" type="image/x-icon" href="../images/favicon.ico?v=2">
+    <!-- ========== CSS ========== -->
+    <!-- body, html, *, fonts... -->
+    <link rel="stylesheet" href="../style/base.css" />
+    <!-- navbar style -->
+    <link rel="stylesheet" href="../style/navbar.css" />
+    <!-- animations that are toggled through js -->
+    <link rel="stylesheet" href="../style/animations.css" />
+    <!-- hint specific style -->
+    <link rel="stylesheet" href="../style/hints.css" />
+    <!-- style that's only used in shape page -->
+    <link rel="stylesheet" href="../style/shapes.css" />
 
-  <!-- ========== CSS ========== -->
-  <!-- body, html, *, fonts... -->
-  <link rel="stylesheet" href="../style/base.css" />
-  <!-- navbar style -->
-  <link rel="stylesheet" href="../style/navbar.css" />
-  <!-- animations that are toggled through js -->
-  <link rel="stylesheet" href="../style/animations.css" />
-  <!-- hint specific style -->
-  <link rel="stylesheet" href="../style/hints.css" />
-  <!-- style that's only used in shape page -->
-  <link rel="stylesheet" href="../style/shapes.css" />
+    <!-- ========== JS ========== -->
+    <!-- all pages shared JavaScript -->
+    <script src="../js/shared.js" defer></script>
+    <!-- p5js -->
+    <script src="../js/p5/p5.min.js"></script>
+    <!-- helper functions -->
+    <script src="../js/helpers/coordinateTransformer.js"></script>
+    <script src="../js/helpers/canvasManager.js" defer></script>
+    <!-- spiral drawing -->
+    <script src="../js/drawings/spiral.js" defer></script>
+    <!-- sketch -->
+    <script src="../js/sketch.js" defer></script>
 
-  <!-- ========== JS ========== -->
-  <!-- all pages shared JavaScript -->
-  <script src="../js/shared.js" defer></script>
-  <!-- p5js -->
-  <script src="../js/p5/p5.min.js"></script>
-  <!-- helper functions -->
-  <script src="../js/helpers/coordinateTransformer.js"></script>
-  <script src="../js/helpers/canvasManager.js" defer></script>
-  <!-- spiral drawing -->
-  <script src="../js/drawings/spiral.js" defer></script>
-  <!-- sketch -->
-  <script src="../js/sketch.js" defer></script>
+    <title>Scrollable Spiral</title>
+  </head>
 
-  <title>Scrollable Spiral</title>
-</head>
+  <body>
+    <!-- nav container so navbar is hideable -->
+    <div id="nav-container">
+      <!-- title of shape -->
+      <div id="shape-title">Scrollable Spiral</div>
 
-<body>
-  <!-- nav container so navbar is hideable -->
-  <div id="nav-container">
-    <!-- title of shape -->
-    <div id="shape-title">Scrollable Spiral</div>
+      <!-- navigation bar -->
+      <nav id="nav-bar">
+        <!-- navigation bar items -->
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="circle.html">Circle</a></li>
+          <li><a href="heart.html">Heart</a></li>
+          <li id="current-page"><a href="spiral.html">Spiral</a></li>
+          <li><a href="rose.html">Maurer Rose</a></li>
 
-    <!-- navigation bar -->
-    <nav id="nav-bar">
-      <!-- navigation bar items -->
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="circle.html">Circle</a></li>
-        <li><a href="heart.html">Heart</a></li>
-        <li id="current-page"><a href="spiral.html">Spiral</a></li>
-        <li><a href="rose.html">Maurer Rose</a></li>
-
-        <!-- to be continued special element -->
-        <li id="last-navbar-item">And more to come...</li>
-      </ul>
-      <hr />
-    </nav>
-  </div>
-
-  <!-- main - contains shape hint and shape info as well as canvas placed by p5.js libraries -->
-  <main>
-    <!-- shape hint - will appear if user has not scrolled after a while -->
-    <div id="hint-container-container">
-      <div id="hint-container">Try Scrolling</div>
+          <!-- to be continued special element -->
+          <li id="last-navbar-item">And more to come...</li>
+        </ul>
+        <hr />
+      </nav>
     </div>
 
-    <!-- shape information container -->
-    <div id="shape-info-container">
-      <!-- shows how much spiral has rotated -->
-      <div class="shape-info-element">
-        Spiral Rotated By: <span id="spiral-rotation-value">0</span> degrees
+    <!-- main - contains shape hint and shape info as well as canvas placed by p5.js libraries -->
+    <main>
+      <!-- shape hint - will appear if user has not scrolled after a while -->
+      <div id="hint-container-container">
+        <div id="hint-container">Try Scrolling</div>
       </div>
-      <!-- allows user to change spiral color -->
-      <div clas="shape-info-element">
-        <button id="new-color-button">New Color</button>
-      </div>
-      <!-- allows user to add noise to spiral -->
-      <div class="shape-info-element">
-        <button id="toggle-noise-button">Add Noise</button>
-      </div>
-    </div>
-  </main>
-</body>
 
+      <!-- shape information container -->
+      <div id="shape-info-container">
+        <!-- formula of shape -->
+        <div class="shape-info-element">
+          Formula:
+          <div class="s-text">r = a * &#952;</div>
+          <div class="s-text">
+            where a is a constant number that determines the scale of the spiral
+          </div>
+        </div>
+        <!-- shows how much spiral has rotated -->
+        <div class="shape-info-element">
+          Spiral Rotated By: <span id="spiral-rotation-value">0</span> degrees
+        </div>
+        <!-- allows user to change spiral color -->
+        <div clas="shape-info-element">
+          <button id="new-color-button">New Color</button>
+        </div>
+        <!-- allows user to add noise to spiral -->
+        <div class="shape-info-element">
+          <button id="toggle-noise-button">Add Noise</button>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
