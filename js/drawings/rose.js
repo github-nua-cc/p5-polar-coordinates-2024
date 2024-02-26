@@ -36,19 +36,33 @@ function mustDraw() {
   return false;
 }
 
+const dSliderElement = document.getElementById("rose-d-slider");
 const dValueElement = document.getElementById("rose-d-value");
+dSliderElement.value = d;
 dValueElement.value = d;
 
+dSliderElement.oninput = (event) => {
+  newD = event.target.value;
+  dValueElement.value = event.target.value;
+};
 dValueElement.onchange = (event) => {
   newD = event.target.value;
-};
+  dSliderElement.value = event.target.value;
+}
 
+const nSliderElement = document.getElementById("rose-n-slider");
 const nValueElement = document.getElementById("rose-n-value");
+nSliderElement.value = n;
 nValueElement.value = n;
 
+nSliderElement.oninput = (event) => {
+  newN = event.target.value;
+  nValueElement.value = event.target.value;
+};
 nValueElement.onchange = (event) => {
   newN = event.target.value;
-};
+  nSliderElement.value = event.target.value;
+}
 
 //walkerArray
 let walkerCoordinatesArray = [];
