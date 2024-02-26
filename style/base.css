@@ -24,3 +24,10 @@ body {
 .s-text {
   font-size: 15px;
 }
+
+/* link */
+.link {
+  all: unset;
+  text-decoration: underline;
+  cursor: pointer;
+}
