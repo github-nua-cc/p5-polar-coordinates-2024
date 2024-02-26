@@ -34,9 +34,9 @@ function drawPointWithRandomColorAndPolarCoordinates(radius, theta) {
   fill(randomColor);
 
   //get html coordinates
-  const htmlCoordinates = polarToCartesian(radius, theta);
+  const cartesianCoordinates = polarToCartesian(radius, theta);
 
   //draw the point
-  circle(htmlCoordinates.x, htmlCoordinates.y, 50);
+  circle(cartesianCoordinates.x, cartesianCoordinates.y, 50);
 }
 
