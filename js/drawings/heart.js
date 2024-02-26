@@ -33,11 +33,11 @@ function drawHeart() {
     //get radius of this theta
     const radius = heartOffset * radiusForHeart(theta);
 
-    //get html coordinates
-    const htmlCoordinates = polarToCartesian(radius, theta);
+    //get cartesian coordinates
+    const cartesianCoordinates = polarToCartesian(radius, theta);
 
     //draw a point at these coordinates
-    circle(htmlCoordinates.x, htmlCoordinates.y, heartThickness);
+    circle(cartesianCoordinates.x, cartesianCoordinates.y, heartThickness);
   }
 
   //update heart scale

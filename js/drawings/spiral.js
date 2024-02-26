@@ -38,13 +38,13 @@ function drawSpiral() {
     const noisedRadius = radius + currentNoise;
 
     //get html coordinates
-    const htmlCoordinates = polarToCartesian(
+    const cartesianCoordinates = polarToCartesian(
       noisedRadius,
       theta + spiralOffset
     );
 
     //draw a point at these coordinates
-    circle(htmlCoordinates.x, htmlCoordinates.y, 16);
+    circle(cartesianCoordinates.x, cartesianCoordinates.y, 16);
 
     if (theta % 360 === 0) {
       // update increment
