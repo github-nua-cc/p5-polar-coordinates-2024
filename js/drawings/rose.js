@@ -20,7 +20,7 @@ function drawRose() {
   let walkerPosition = { radius: 0, theta: 0 };
   let nextWalkerPosition = { radius: sin(n * d), theta: index * d };
 
-  while (index < 359) {
+  while (index < 361) {
     console.log("x: " + nextWalkerPosition.x + ", y: " + nextWalkerPosition.y);
 
     const cartesianCoordinates = polarToCartesian(
